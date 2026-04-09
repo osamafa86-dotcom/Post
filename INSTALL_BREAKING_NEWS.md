@@ -24,21 +24,32 @@ php artisan view:clear
 php artisan cache:clear
 ```
 
-## ربط الشريط بقاعدة البيانات (اختياري)
+## ربط الشريط بقاعدة البيانات
 
-افتح ملف `breaking-news.blade.php` واستبدل مصفوفة `$breakingNews` بجلب من الـ Model:
+الشريط يدعم **ثلاث حالات تلقائياً**:
 
-```php
-@php
-    $breakingNews = \App\Models\Post::where('is_breaking', true)
-        ->latest()
-        ->take(10)
-        ->pluck('title')
-        ->toArray();
-@endphp
-```
+1. **تمرير صريح من Controller / Livewire Component**:
+   ```php
+   @include('components.layouts.main.palestine_post.breaking-news', [
+       'breakingNews' => \App\Models\Post::where('is_breaking', true)
+           ->latest()->take(10)->get(['title', 'slug'])
+           ->map(fn($p) => ['title' => $p->title, 'url' => route('post.show', $p->slug)]),
+   ])
+   ```
 
-أو مرّر الأخبار من Controller/Livewire Component.
+2. **الجلب التلقائي من جدول `breaking_news`** (إن وُجد الموديل `App\Models\BreakingNews`):
+   - يحترم عمود `is_active` إن وُجد.
+   - يحترم عمود `published_at` إن وُجد.
+   - يجلب أحدث 15 خبر.
+
+3. **المصفوفة الافتراضية** كـ fallback إذا لم يُمرَّر شيء ولم يُعثر على بيانات.
+
+### الأشكال المدعومة لكل عنصر
+- نص بسيط: `'عنوان الخبر'`
+- مصفوفة: `['title' => '...', 'url' => '...']`
+- كائن: `$model->title`, `$model->url`
+
+إذا تم توفير `url` فإن العنصر سيظهر كرابط قابل للنقر.
 
 ## تخصيص الألوان
 
