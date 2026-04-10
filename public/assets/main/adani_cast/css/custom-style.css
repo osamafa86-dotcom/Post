@@ -1,0 +1,439 @@
+
+
+body,
+.app-default {
+    background-color: #f2f3f8;
+}
+
+.app-header {
+    background: #fff;
+}
+
+/* القائمة */
+.custom-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    grid-gap: 20px;
+}
+
+
+
+.custom-menu-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    grid-gap: 8px;
+}
+
+.custom-menu-link:hover {
+    opacity: 0.8;
+}
+.form-check .form-check-label {
+    color: #212529;
+
+}
+.form-check-input,
+.form-check.form-check-solid .form-check-input{
+    border: 1px solid #ddd;
+    /*background-color: var(--bs-gray-200);*/
+}
+/* الأيقونات المخصصة */
+.custom-icon {
+    font-size: 18px;
+}
+
+.icon-preview::before {
+    content: '\f06e';
+    /* كود أيقونة مخصصة يمكن تغييره */
+    font-family: 'FontAwesome';
+    /* أو يمكنك استخدام أي مكتبة أيقونات أخرى */
+}
+
+.icon-upload::before {
+    content: '\f0ed';
+    /* كود أيقونة مخصصة للرفع */
+    font-family: 'FontAwesome';
+}
+
+/* النصوص */
+.custom-text {
+    font-size: 14px;
+}
+
+.text-warning {
+    color: #ffcc00;
+}
+
+.text-primary {
+    color: #007bff;
+}
+
+
+.custom-menu-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+
+.custom-icon {
+    font-size: 18px;
+    margin-right: 8px;
+}
+
+.file-library {
+    text-align: center;
+    padding: 20px;
+}
+
+.file-item {
+    margin-bottom: 20px;
+}
+
+.file-item img {
+    width: 100%;
+    height: auto;
+}
+
+.file-item p {
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.library-sidebar {
+    border-right: 1px solid #ddd;
+    padding-right: 15px;
+}
+
+.file-item {
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+}
+
+.file-item .options a {
+    color: #333;
+}
+
+.folder-list li a {
+    display: flex;
+    align-items: center;
+    grid-gap: 10px;
+    padding: 5px 0;
+    text-decoration: none;
+    color: #212529;
+}
+
+.folder-list li a.selected {
+    font-weight: bold;
+    color: #007bff;
+}
+
+
+.butoons-group-header {
+    grid-gap: 10px;
+    align-items: center;
+
+}
+
+.form-group label {
+    padding-bottom: 5px;
+
+}
+
+#imagePreview:hover {
+    border-color: #1442DB;
+    /* لون التفاعل عند التحويم */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    /* ظل خفيف عند التحويم */
+}
+
+
+[data-bs-theme="dark"] body,
+[data-bs-theme="dark"] .app-default {
+    background-color: var(--bs-app-bg-color);
+}
+
+[data-bs-theme="dark"] .app-header {
+    background: #2b2b2b;
+}
+
+/* الوضع الفاتح */
+[data-bs-theme="light"] .card {
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #ddd;
+}
+
+[data-bs-theme="light"] .seo-checklist li {
+    color: #ff0000;
+    /* اللون الأحمر للفحص الأساسي */
+}
+
+[data-bs-theme="light"] .seo-checklist li.text-warning {
+    color: #ff9800;
+    /* اللون الأصفر للفحص الإضافي */
+}
+
+/* الوضع الداكن */
+[data-bs-theme="dark"] .card {
+    background-color: #2b2b2b;
+    color: #ffffff;
+    border: 1px solid #444;
+}
+
+[data-bs-theme="dark"] .seo-checklist li {
+    color: #ff4444;
+    /* اللون الأحمر الداكن للفحص الأساسي */
+}
+
+[data-bs-theme="dark"] .seo-checklist li.text-warning {
+    color: #ffc107;
+    /* اللون الأصفر الداكن للفحص الإضافي */
+}
+
+/* تنسيق التبويبات */
+.social-section .nav-tabs .nav-link.active {
+    background-color: #007bff;
+    color: #ffffff;
+}
+
+/* التبويبات في الوضع الداكن */
+[data-bs-theme="dark"] .social-section .nav-tabs .nav-link.active {
+    background-color: #343a40;
+    color: #ffffff;
+}
+
+/* تعديلات الصور */
+.img-thumbnail {
+    max-width: 100px;
+    border-radius: 8px;
+}
+
+@media (max-width: 768px) {}
+
+
+/* الوضع الفاتح */
+
+.nav-tabs .nav-link.active [data-bs-theme="light"] .bi-facebook {
+    color: #1877F2;
+    /* اللون الأزرق لـ Facebook */
+}
+
+[data-bs-theme="light"] .bi-twitter {
+    color: #1DA1F2;
+    /* اللون الأزرق لـ Twitter */
+}
+
+[data-bs-theme="light"] .nav-tabs .nav-link.active i {
+    color: #fff;
+}
+
+[data-bs-theme="light"] .bi-exclamation-circle-fill {
+    color: #dc3545;
+    /* اللون الأحمر للفحص الأساسي */
+}
+
+[data-bs-theme="light"] .bi-exclamation-triangle-fill {
+    color: #ffc107;
+    /* اللون الأصفر للفحص الإضافي */
+}
+
+/* الوضع الداكن */
+[data-bs-theme="dark"] .bi-facebook {
+    color: #8ab4f8;
+    /* لون فاتح لـ Facebook في الوضع الداكن */
+}
+
+[data-bs-theme="dark"] .bi-twitter {
+    color: #9bbdfc;
+    /* لون فاتح لـ Twitter في الوضع الداكن */
+}
+
+[data-bs-theme="dark"] .bi-exclamation-circle-fill {
+    color: #ff6b6b;
+    /* اللون الأحمر الفاتح للفحص الأساسي في الوضع الداكن */
+}
+
+[data-bs-theme="dark"] .bi-exclamation-triangle-fill {
+    color: #ffcc00;
+    /* اللون الأصفر الفاتح للفحص الإضافي في الوضع الداكن */
+}
+
+/* التنسيق العام */
+.btn-lg {
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.btn i {
+
+    font-size: 16px;
+}
+
+/* حقل إدخال رقم المنشور */
+.input-group .form-control-lg {
+    font-size: 1rem;
+    padding: 10px;
+    height: auto;
+}
+
+/* الوضع الفاتح */
+[data-bs-theme="light"] .btn-light {
+    background-color: #f8f9fa;
+    color: #6c757d;
+}
+
+/* الوضع الداكن */
+[data-bs-theme="dark"] .card {
+    background-color: #2b2b2b;
+    color: #ffffff;
+    border: 1px solid #444;
+}
+
+[data-bs-theme="dark"] .btn-light {
+    background-color: #444;
+    color: #ffffff;
+}
+
+[data-bs-theme="dark"] .form-control {
+    background-color: #333;
+    color: #ffffff;
+    border-color: #555;
+}
+
+[data-bs-theme="dark"] .form-control::placeholder {
+    color: #bbb;
+}
+
+[data-bs-theme="dark"] .btn-primary {
+    background-color: #5867dd;
+    border-color: #5867dd;
+}
+
+[data-bs-theme="dark"] .btn-danger {
+    background-color: #dc3545;
+}
+
+[data-bs-theme="dark"] .btn-success {
+    background-color: #28a745;
+}
+
+[data-bs-theme="dark"] .btn-info {
+    background-color: #17a2b8;
+}
+
+[data-bs-theme="dark"] .btn-light {
+    background-color: #555;
+    color: #fff;
+}
+
+.h-100 {
+    height: 100%;
+}
+
+.dropzone {
+    min-height: 11px !important;
+    padding: 0 !important;
+    text-align: center;
+    cursor: pointer;
+    border: none !important;
+    background-color: #f9f9f9 !important;
+    border-radius: 0.475rem !important;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+    -webkit-border-radius: 0.475rem !important;
+    -moz-border-radius: 0.475rem !important;
+    -ms-border-radius: 0.475rem !important;
+    -o-border-radius: 0.475rem !important;
+    margin-bottom: 20px;
+}
+
+.dropzone:hover {
+    background-color: #e6f7ff;
+    border-color: #1890ff;
+}
+
+.dropzone .dz-message {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #666;
+}
+
+.dropzone .dz-message span {
+    display: inline-block;
+    margin-top: 1rem;
+    color: #1890ff;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+
+
+.file-item img {
+    height: 70px;
+    object-fit: contain !important;
+}
+
+.file-item .file-name {
+    overflow-wrap: break-word;
+}
+
+[data-bs-theme="dark"] .dropzone {
+    background-color: #333 !important;
+    color: #ffffff;
+    border-color: #555 !important;
+}
+
+[data-bs-theme="dark"] .file-item {
+    background-color: #333;
+    color: #ffffff;
+    border-color: #555;
+}
+
+[data-bs-theme="dark"] .text-dark {
+    color: #ffffff !important;
+}
+
+[data-bs-theme="dark"] .dropzone .dz-message span
+
+/* [data-bs-theme="dark"] i.bi,
+[data-bs-theme="dark"] i[class^=fonticon-],
+[data-bs-theme="dark"] i[class*=" fonticon-"],
+[data-bs-theme="dark"] i[class^=fa-],
+[data-bs-theme="dark"] i[class*=" fa-"],
+[data-bs-theme="dark"] i[class^=la-],
+[data-bs-theme="dark"] i[class*=" la-"]  */
+    {
+    color: #ffffff !important;
+
+}
+
+.btn-metal i,
+.btn-metal {
+    color: #212529 !important;
+}
+
+[data-bs-theme="dark"]
+.folder-list li a {
+    color: #fff;
+}
+
+[data-bs-theme="dark"]
+.form-check.form-check-solid .form-check-input:not(:checked) {
+    border: 1px solid #777676;
+}
+[data-bs-theme="dark"] .table:not(.table-bordered) th,
+[data-bs-theme="dark"]
+label{
+    color: #fff!important;
+
+}
+

@@ -1,0 +1,111 @@
+/* ============================================================================
+   Input group (RTL tweaks + consistent radii/borders)
+   ========================================================================== */
+
+/* Text input: left-rounded (RTL), visible divider to the button */
+.input-group .form-control {
+    border-right: none;
+    margin-right: 1px;
+    border-left: 1px solid;
+
+    border-radius: 6px 0 0 6px !important;
+}
+
+.cmdbar__right .input-group .form-control {
+    border-radius: 0 6px 6px 0 !important;
+}
+
+/* Action button aligned to input (kept as-is) */
+.input-group .btn-edit {
+    border-radius: 6px 0 0 6px !important; /* same radii by request */
+}
+
+/* Companion addon radii (RTL) */
+.input-group-text {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+/* ============================================================================
+   Inline counters / numeric chip
+   ========================================================================== */
+
+.edit-numbers {
+    font-size: 0.85rem;
+    font-weight: 600;
+    background: color-mix(in srgb, var(--brand-primary) 18%, transparent);
+    color: var(--brand-primary);
+    padding: 4px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 25px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+/* ============================================================================
+   Filters / decorators
+   ========================================================================== */
+
+/* Use left bg-position in RTL contexts */
+.custom-stats-filter {
+    background-position: left 5px center !important;
+}
+
+/* Keep accordion arrow flush with text (neutralize default margin-left) */
+.permissions-manager .accordion-button::after {
+    margin-left: unset !important;
+}
+
+/* ============================================================================
+   Menus / navbar (RTL spacing + nested menu indent)
+   ========================================================================== */
+
+/* Nested menu indentation (RTL): shift to the right, cancel LTR margin */
+.menu-sub-indention .menu-sub:not([data-popper-placement]) {
+    margin-right: 2.5rem;
+    margin-left: 0 !important;
+}
+
+/* Navbar item spacing (RTL): swap margins */
+.app-navbar .app-navbar-item {
+    margin-left: 0 !important;
+    margin-right: 1rem;
+}
+
+/* Icon spacing (RTL): move gap to the left side of the icon */
+.custom-icon {
+    margin-left: 8px;
+    margin-right: 0 !important;
+}
+
+/* ============================================================================
+   Tables (tighten first/last cell padding for edge alignment)
+   ========================================================================== */
+
+.table:not(.table-bordered) tr:first-child,
+.table:not(.table-bordered) th:first-child,
+.table:not(.table-bordered) td:first-child {
+    padding-right: 0;
+}
+
+.table:not(.table-bordered) tr:last-child,
+.table:not(.table-bordered) th:last-child,
+.table:not(.table-bordered) td:last-child {
+    padding-left: .75rem;
+    padding-right: 0;
+}
+
+.form-select {
+    background-position: left .5rem center;
+}
+
+.popup-add {
+    left: 0 !important;
+    right: unset !important;
+}

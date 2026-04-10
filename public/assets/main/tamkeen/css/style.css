@@ -1,0 +1,1787 @@
+:root {
+
+    --secondary-color: #2DB8C0;
+    --primary-color: #F4698E;
+    --text-color: #3E4F56;
+    --text-muted-color: #606060;
+    --link-color: #2db8c0;
+    --hover-color: #f4698e;
+    --border-color: #e5cfcf;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.owl-carousel .owl-item .card-img-top img {
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+}
+
+@font-face {
+    font-family: "cairo-Regular";
+    src: url(../fonts/Cairo-Regular.ttf);
+}
+
+@font-face {
+    font-family: "cairo-SemiBold";
+    src: url(../fonts/Cairo-SemiBold.ttf);
+}
+
+@font-face {
+    font-family: "cairo-Bold";
+    src: url(../fonts/Cairo-Bold.ttf);
+}
+
+@font-face {
+    font-family: "barada";
+    src: url(../fonts/barada-reqa.ttf);
+}
+
+body {
+    font-size: 1rem;
+    line-height: 150%;
+    font-family: "cairo-Regular", sans-serif;
+
+}
+
+.text-muted {
+    color: var(--text-muted-color) !important;
+}
+
+.rounded {
+    border-radius: 12px !important;
+    -webkit-border-radius: 12px !important;
+    -moz-border-radius: 12px !important;
+    -ms-border-radius: 12px !important;
+    -o-border-radius: 12px !important;
+}
+
+.section {
+    padding: 80px 0;
+}
+
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "cairo-Bold";
+    margin: 0;
+    line-height: 150%;
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+h2 {
+    font-size: 3rem;
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+h4 {
+    font-size: 1.8rem;
+}
+
+h5 {
+    font-size: 1.3rem;
+}
+
+p {
+    font-size: 1rem;
+    line-height: 150%;
+    color: var(--text-muted-color);
+}
+
+input::placeholder {
+    text-align: right;
+    font-size: 1rem;
+}
+
+a,
+a:active,
+a:focus,
+a:hover {
+    text-decoration: none;
+}
+
+a:active,
+a:focus,
+a:hover {
+    outline: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+ul {
+    list-style: none none;
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    margin: 0;
+}
+
+
+.btn {
+    display: flex;
+    align-items: center;
+    grid-gap: 8px;
+    justify-content: center;
+    width: max-content;
+
+    padding: 8px 20px;
+    font-size: 1rem;
+}
+
+.overlay {
+    background: rgba(0, 0, 0, 0.6);
+    color: var(--text-color);
+}
+
+.pagination {
+    background-color: transparent !important;
+    --bs-pagination-bg: transparent;
+}
+
+.pagination li a {
+    background-color: #fff;
+    color: #000;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+}
+
+.active > .page-link,
+.page-link.active {
+    background-color: var(--link-color);
+    color: #fff;
+    border: none;
+    font-weight: bold;
+}
+
+.pagination li:first-child a,
+.pagination li:last-child a {
+    background-color: transparent;
+    color: inherit !important;
+}
+
+.pagination .page-item a {
+    margin-left: 10px;
+    border-radius: 50%;
+}
+
+.page-item:first-child .page-link {
+    margin-left: 10px;
+    border-radius: 50%;
+    background-color: transparent;
+}
+
+.page-item:last-child .page-link {
+    border-radius: 50%;
+}
+
+/* Navbar Styling */
+.custom-navbar {
+    padding: 0.8rem 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+}
+
+.custom-navbar.fixed-nav {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    background-color: #fff;
+}
+
+.navbar-logo {
+    width: 160px;
+    margin-right: 10px;
+}
+
+.navbar-nav .nav-item .nav-link {
+    margin: 0;
+    padding: 15px;
+}
+
+.nav-link {
+    color: var(--text-color);
+    margin-right: 15px;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link.active,
+.navbar-nav .show > .nav-link {
+    color: var(--primary-color);
+    position: relative;
+}
+
+.navbar-nav .nav-link.active::after,
+.navbar-nav .show > .nav-link::after {
+    content: "";
+    height: 2px;
+    background-color: var(--primary-color);
+    position: absolute;
+    bottom: 7px;
+    left: 15%;
+    width: 70%;
+}
+
+.nav-link:hover {
+    color: var(--primary-color);
+
+}
+
+.search-form {
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+}
+
+.search-form .search-input {
+    background-color: var(--content-bg-color);
+    color: var(--text-color);
+    border-radius: 8px;
+    padding: 5px 10px;
+    border: none;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    max-width: 100%;
+}
+
+.search-form .search-input:focus {
+    box-shadow: none;
+}
+
+.search-form .search-button {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: 8px;
+    padding: 5px 15px;
+    margin-left: 0;
+    transition: background-color 0.3s ease;
+
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.search-form .search-button:hover {
+    background-color: var(--hover-color);
+}
+
+.navbar-toggler {
+    color: var(--text-color);
+}
+
+.hero-section {
+    padding: 60px 0;
+}
+
+.hero-section h1 {
+    color: var(--text-color);
+    font-size: 62px;
+
+}
+
+.hero-section h4 {
+    font-family: "barada";
+    font-size: 48px;
+    color: var(--secondary-color);
+}
+
+.btn-primary {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+    font-size: 16px;
+}
+
+.btn-primary:hover {
+    background: var(--secondary-color);
+    border-color: var(--secondary-color);
+
+}
+
+.btn-outline-primary {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    border-radius: 50px;
+    font-size: 16px;
+
+}
+
+.btn-outline-primary:hover {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: #fff;
+}
+
+/**/
+.studies-section {
+    /* Example styling; adjust as needed */
+    /* You can customize spacing, background, etc. */
+}
+
+.section-title {
+    font-size: 28px;
+    color: var(--text-color);
+    position: relative;
+    padding-right: 20px;
+    margin-bottom: 40px;
+}
+
+.section-title::before {
+    content: "";
+    height: 100%;
+    width: 6px;
+    background: var(--secondary-color);
+    position: absolute;
+    right: 0;
+    line-height: 1;
+}
+
+
+.studies-carousel .card {
+    box-shadow: 0.79px 3.18px 21.46px 0px rgba(0, 0, 0, 0.11);
+    background: rgba(255, 255, 255, 1);
+    border: none;
+    min-height: 435px;
+}
+
+.studies-carousel .card-img-top {
+    height: 240px;
+}
+
+.studies-carousel .card-img-top {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.studies-carousel .item {
+    padding: 10px;
+}
+
+.owl-carousel .owl-nav.disabled {
+    display: block;
+}
+
+
+.owl-nav button {
+    background: var(--primary-color) !important;
+    color: #fff !important;
+    border: none;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+}
+
+.owl-nav .owl-prev {
+    right: -50px;
+
+}
+
+.owl-nav .owl-next {
+    left: -50px;
+
+}
+
+.card-title {
+    font-size: 20px;
+    color: var(--text-color);
+}
+
+.date {
+    font-size: 14px;
+    color: var(--text-muted-color);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.read-more {
+    color: var(--secondary-color);
+    font-size: 1rem;
+}
+
+
+.read-more:hover {
+    color: var(--primary-color);
+}
+
+/* Research Slider Styles (English Comments with Arabic content) */
+
+/* Ensure the card has a minimal shadow and rounded corners */
+.research-card {
+    background-color: #fff;
+    border-radius: 12px;
+    border: 3px solid rgba(233, 233, 233, 1);
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+}
+
+.research-card .img-placeholder {
+    width: 100px;
+}
+
+/* Placeholder image styling */
+.research-card .img-placeholder img {
+    border-radius: 4px;
+    /* Add any desired max-width or height if needed */
+}
+
+.research-content {
+    flex: 1;
+}
+
+/* Adjust spacing around the text */
+.research-content h5 {
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+/* Reports Slider Styles (English Comments with Arabic content) */
+
+.reports-section {
+    background-color: #fff;
+}
+
+
+/* Basic style for cards */
+.report-card {
+    background-color: #fff;
+    border-radius: 12px;
+    border: 3px solid rgba(233, 233, 233, 1);
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+}
+
+.report-card .card-content {
+    flex: 1;
+}
+
+.report-card .card-img {
+    width: 150px;
+}
+
+.report-card .card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Spacing for big vs. small cards (you can tweak as needed) */
+.small-card {
+    min-height: 110px;
+    /* or any suitable value */
+}
+
+.big-card {
+    min-height: 260px;
+    /* or any suitable value */
+}
+
+/* Courses Slider Styles (English Comments with Arabic content) */
+
+
+/* Card Base Style */
+.course-card {
+    background-color: #fff;
+    border-radius: 8px;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.course-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+
+.course-card {
+    border: 3px solid rgba(233, 233, 233, 1);
+
+}
+
+.course-icon {
+    height: 100px;
+}
+
+.course-icon img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+}
+
+
+/* Basic styling for the section background and spacing */
+
+
+/* Form labels and fields spacing */
+.form-label {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.form-control {
+    border-radius: 6px;
+    box-shadow: none;
+}
+
+/* Optional: add hover/focus effect on form controls */
+.form-control:focus {
+    border-color: #008C9E;
+    box-shadow: 0 0 0 0.2rem rgba(0, 140, 158, 0.1);
+}
+
+/* Footer Styling */
+.custom-footer {
+    background-color: rgba(247, 211, 203, 0.4);
+    padding: 60px 0 20px; /* زيادة المساحة العلوية والسفلية للفوتر */
+    text-align: center;
+    border-top: 2px solid var(--border-color);
+}
+
+/* Footer Content Layout */
+.footer-content {
+    display: flex;
+    justify-content: space-around; /* توزيع العناصر بالتساوي */
+    flex-wrap: wrap;
+    align-items: flex-start; /* محاذاة العناصر للأعلى */
+    max-width: 1200px; /* زيادة أقصى عرض للفوتر */
+    margin: 0 auto; /* توسيط الفوتر */
+    padding-bottom: 0; /* زيادة المسافة بين المحتوى والجزء السفلي */
+    gap: 40px; /* المسافة بين الأقسام */
+}
+
+/* Footer Sections */
+.footer-section {
+    flex: 1;
+    min-width: 280px; /* زيادة الحد الأدنى للعرض ليكون المحتوى أوضح */
+    padding: 0 15px; /* إضافة مسافة داخلية للأقسام لتبدو أنظف */
+    text-align: right; /* محاذاة النص لليمين لكل قسم */
+}
+
+/* Social Media & Logo Section */
+.footer-section.social {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* محاذاة اللوجو والأيقونات لليمين */
+    text-align: right; /* التأكيد على محاذاة النص لليمين */
+}
+
+.footer-section.social .logo img {
+    margin-bottom: 20px; /* زيادة المسافة تحت اللوجو */
+    max-width: 150px; /* التحكم في حجم اللوجو */
+    height: auto;
+}
+
+/* Social Icons */
+.social-icons {
+    display: flex;
+    justify-content: flex-start; /* محاذاة الأيقونات لليمين */
+    gap: 15px; /* زيادة المسافة بين الأيقونات */
+    margin-top: 15px; /* زيادة المسافة فوق الأيقونات */
+}
+
+.social-icons a {
+    color: var(--secondary-color);
+    font-size: 20px; /* تكبير حجم الأيقونات */
+    transition: color 0.3s, background-color 0.3s, border-color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px; /* تكبير حجم الدوائر */
+    height: 45px; /* تكبير حجم الدوائر */
+    border: 1px solid var(--secondary-color);
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.social-icons a:hover {
+    color: #fff;
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    transform: translateY(-3px); /* إضافة تأثير بسيط عند التحويم */
+}
+
+/* Useful Links Section (Center) */
+.links { /* تم إزالة footer-section من هنا لأنك بالفعل تضعها كـ class منفصلة في الـ HTML */
+    flex: 1;
+    min-width: 250px;
+    text-align: right; /* محاذاة النص لليمين */
+}
+
+.footer-section h4 {
+    color: var(--text-muted-color);
+    font-size: 20px; /* تكبير حجم العنوان */
+    font-weight: bold;
+    margin-bottom: 20px; /* زيادة المسافة تحت العنوان */
+    position: relative; /* لإضافة خط تحت العنوان */
+    padding-bottom: 10px; /* مسافة بين العنوان والخط */
+}
+
+/* إضافة خط أنيق تحت العناوين */
+.footer-section h4::after {
+    content: '';
+    position: absolute;
+    right: 0; /* يبدأ من اليمين */
+    bottom: 0;
+    width: 60px; /* طول الخط */
+    height: 3px; /* سمك الخط */
+    background-color: var(--primary-color); /* لون الخط */
+    border-radius: 2px;
+}
+
+/* Links Styling */
+.links ul {
+    list-style: none;
+    padding: 0;
+    display: flex; /* تغيير العرض ليكون أفقيًا في بعض الحالات */
+    flex-direction: column; /* جعل الروابط تظهر عموديًا بشكل افتراضي */
+    align-items: flex-start; /* محاذاة الروابط لليمين */
+}
+
+.links ul li {
+    margin-bottom: 10px; /* زيادة المسافة بين الروابط */
+}
+
+.links ul li a {
+    color: var(--link-color);
+    text-decoration: none;
+    font-size: 17px; /* تكبير حجم خط الروابط */
+    transition: color 0.3s, transform 0.3s;
+    display: inline-block; /* لتمكين تأثير التحويل */
+}
+
+.links ul li a:hover {
+    color: var(--primary-color); /* استخدام لون الـ primary عند التحويم */
+    transform: translateX(5px); /* تأثير تحريك بسيط عند التحويم */
+}
+
+/* About Section */
+.footer-section.about {
+    text-align: right; /* محاذاة النص لليمين */
+}
+
+.footer-section.about p {
+    color: var(--text-muted-color);
+    font-size: 16px;
+    line-height: 1.8; /* زيادة تباعد الأسطر لتحسين سهولة القراءة */
+    max-width: 400px; /* زيادة أقصى عرض للفقرة */
+    margin: 0; /* إزالة أي هوامش افتراضية قد تكون موجودة */
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    border-top: 1px solid var(--border-color);
+    margin-top: 30px; /* زيادة المسافة فوق الجزء السفلي */
+    padding-top: 20px; /* زيادة المسافة الداخلية للجزء السفلي */
+    font-size: 15px; /* تعديل حجم الخط */
+    color: var(--text-color);
+    text-align: center;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column; /* جعل الأقسام تظهر فوق بعضها البعض على الشاشات الصغيرة */
+        align-items: center; /* توسيط الأقسام */
+        text-align: center; /* توسيط النص في كل قسم */
+    }
+
+    .footer-section {
+        min-width: unset; /* إزالة الحد الأدنى للعرض */
+        width: 100%; /* جعل الأقسام تأخذ عرضًا كاملاً */
+        margin-bottom: 30px; /* مسافة أكبر بين الأقسام */
+    }
+
+    .footer-section.social {
+        align-items: center; /* توسيط اللوجو والأيقونات */
+    }
+
+    .social-icons {
+        justify-content: center; /* توسيط الأيقونات */
+    }
+
+    .links ul {
+        align-items: center; /* توسيط الروابط */
+    }
+
+    .links h4::after {
+        right: 50%; /* توسيط الخط تحت العنوان */
+        transform: translateX(50%);
+    }
+
+    .footer-section.about p {
+        text-align: center; /* توسيط النص في قسم "من نحن" */
+        max-width: 90%; /* تقليل العرض الأقصى للفقرة */
+        margin: 0 auto; /* توسيط الفقرة */
+    }
+}
+
+@media (max-width: 480px) {
+    .custom-footer {
+        padding: 40px 0 20px;
+    }
+
+    .footer-section.social .logo img {
+        max-width: 120px;
+    }
+
+    .social-icons a {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+
+    .links h4 {
+        font-size: 18px;
+    }
+
+    .links ul li a {
+        font-size: 15px;
+    }
+
+    .footer-section.about p {
+        font-size: 14px;
+    }
+
+    .footer-bottom {
+        font-size: 14px;
+    }
+}
+
+/*About us page*/
+/* Breadcrumb Container */
+.breadcrumb-container {
+    background-color: #f9f9f9;
+    /* Light Gray Background */
+    padding: 25px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Breadcrumb List */
+.breadcrumb {
+    list-style: none;
+    display: flex;
+    justify-content: start;
+    gap: 15px;
+    padding: 0;
+    margin: 0;
+}
+
+/* Breadcrumb Items */
+.breadcrumb li {
+    font-size: 16px;
+    color: var(--text-muted-color);
+    border-left: 3px solid #DDD;
+    padding-left: 10px;
+}
+
+.breadcrumb li:last-child {
+    border: none;
+}
+
+/* Breadcrumb Links */
+.breadcrumb li a {
+    text-decoration: none;
+    color: var(--text-muted-color);
+    transition: color 0.3s ease;
+}
+
+/* Active Page Styling */
+.breadcrumb li.active {
+    color: #0099cc;
+    font-weight: bold;
+}
+
+/* Hover Effect */
+.breadcrumb li a:hover {
+    color: #f4698e;
+}
+
+.team-section .section-title {
+    margin-bottom: 20px;
+}
+
+
+.team-section {
+    padding: 60px 0;
+}
+
+
+.section-description {
+    color: var(--text-muted-color);
+    font-size: 20px;
+
+    margin-bottom: 60px;
+}
+
+/* Team Grid */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Individual Team Member */
+.team-member {
+    text-align: center;
+}
+
+/* Circular Image */
+.member-image {
+    width: 120px;
+    height: 120px;
+    margin: auto;
+    border-radius: 50%;
+    border: 2px solid var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.member-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Name and Role */
+.member-name {
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--text-color);
+    margin-top: 10px;
+}
+
+.member-role {
+    font-size: 1rem;
+    color: var(--text-muted-color);
+}
+
+.info-box {
+    border: 3px solid rgba(233, 233, 233, 1);
+    position: relative;
+}
+
+.info-box ::before {
+    content: "";
+    width: 45px;
+    height: 45px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border: 7px solid rgba(255, 255, 255, 1);
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translate(50%, -50%);
+}
+
+.info-box .info-title {
+    color: var(--primary-color);
+    font-size: 20px;
+}
+
+.problem-box p,
+.info-box p {
+    text-align: center;
+    font-size: 18px;
+}
+
+
+.about-section .section-title {
+    margin-bottom: 20px;
+}
+
+/* Section Styling */
+.solutions-section {
+    background-color: var(--background-color);
+    text-align: right;
+}
+
+.solutions-section > p {
+    font-size: 16px;
+}
+
+/* Section Title */
+.solutions-section .section-title {
+    margin-bottom: 20px;
+}
+
+
+/* Problem Boxes */
+.problem-box {
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    text-align: right;
+    position: relative;
+    background: rgba(243, 243, 243, 1);
+
+}
+
+/* Dot */
+.dot {
+    width: 30px;
+    height: 30px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    border: 4px solid rgba(255, 255, 255, 1)
+}
+
+/* Solution Boxes */
+.solution-box {
+    background-color: var(--background-color);
+    border-radius: 12px;
+    border: 3px solid rgba(233, 233, 233, 1);
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+    text-align: center;
+    padding: 20px;
+
+}
+
+/* Solution Icon */
+.solution-icon {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 15px;
+}
+
+/* Solution Title */
+.solution-title {
+    color: var(--secondary-color);
+    font-size: 24px;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .owl-nav .owl-next {
+        left: 0;
+    }
+
+    .owl-nav .owl-prev {
+        right: 0;
+    }
+
+    .solution-box,
+    .problem-box,
+    .about-section .info-box,
+    .about-section p:last-child {
+        margin-bottom: 20px;
+    }
+
+    .about-section .info-box:last-child {
+        margin: 0;
+    }
+}
+
+
+/* Add these to your existing CSS */
+
+/* Prevent layout shifts */
+[data-animate] {
+    opacity: 0;
+    will-change: transform, opacity;
+}
+
+/* Smooth transitions for hover states */
+.card,
+.btn,
+.course-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Performance optimizations */
+.owl-carousel .owl-stage {
+    will-change: transform;
+}
+
+/* Hide overflow for staggered animations */
+.research-section,
+.reports-section {
+    overflow: hidden;
+}
+
+
+/* Hero Section for Articles Page */
+.hero-section2 {
+    padding: 40px 0;
+    text-align: center;
+    background-color: #f7f7f7;
+    /* Optional: adjust background as needed */
+}
+
+.hero-section2 h1 {
+    font-size: 4rem;
+    color: var(--text-color);
+    font-family: "cairo-Bold", sans-serif;
+    margin-bottom: 10px;
+}
+
+.hero-section2 h4 {
+    font-size: 1.8rem;
+    color: var(--secondary-color);
+    font-family: "barada", sans-serif;
+}
+
+/* Advanced Filter Form Styles */
+.advanced-filter-form {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.advanced-filter-form .form-control,
+.advanced-filter-form .form-select {
+    text-align: right;
+    font-size: 1rem;
+}
+
+/* Horizontal Card Styles for Articles */
+.horizontal-card {
+    overflow: hidden;
+    border: 2px solid rgba(247, 211, 203, 0.4);
+    border-radius: 12px;
+    transition: box-shadow 0.3s ease;
+    background-color: #fff;
+}
+
+.horizontal-card .col-md-4 img {
+    height: 250px;
+    object-fit: cover;
+}
+
+/* Using Bootstrap grid inside the card to split image and content */
+.horizontal-card .row.g-0 {
+    flex-wrap: nowrap;
+}
+
+.horizontal-card .col-md-4 {
+    /* Ensure the image occupies fixed width */
+    max-width: 35%;
+}
+
+.horizontal-card .col-md-8 {
+    /* Content area takes remaining space */
+    padding: 20px;
+}
+
+.horizontal-card .card-title {
+    font-size: 1.8rem;
+    color: var(--text-color);
+    font-family: "cairo-Bold", sans-serif;
+    margin-bottom: 10px;
+}
+
+.horizontal-card .card-text {
+    font-size: 1rem;
+    color: var(--text-muted-color);
+    margin-bottom: 15px;
+}
+
+/* Date and read-more link */
+.horizontal-card .date {
+    font-size: 0.9rem;
+    color: var(--text-muted-color);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.horizontal-card .read-more {
+    font-size: 1rem;
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.horizontal-card .read-more:hover {
+    color: var(--primary-color);
+}
+
+/* Advanced Filter Form - Professional Date Input Style */
+.advanced-filter-form select,
+.advanced-filter-form input {
+    position: relative;
+    padding: 10px 40px 10px 15px;
+    /* Padding adjusted to leave space for the calendar icon */
+    font-size: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: #fff;
+    text-align: right;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    appearance: none;
+    /* Remove default styling */
+}
+
+/* Custom Calendar Icon using background image */
+.advanced-filter-form input::-webkit-calendar-picker-indicator {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    filter: invert(40%);
+    cursor: pointer;
+}
+
+/* Firefox specific */
+.advanced-filter-form select:-moz-focus-inner,
+.advanced-filter-form input::-moz-focus-inner {
+    border: 0;
+}
+
+/* Hover and focus states */
+
+.advanced-filter-form select:hover,
+.advanced-filter-form select:focus,
+.advanced-filter-form input:hover,
+.advanced-filter-form input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px rgba(0, 140, 158, 0.3);
+    outline: none;
+}
+
+
+/* Custom styles for single article page to avoid conflicts */
+.single-article-pro {
+    font-family: "cairo-Regular", sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.single-article-pro h1 {
+    font-family: "cairo-Bold", sans-serif;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+
+.single-article-pro .article-meta {
+    font-size: 0.9rem;
+    color: var(--text-muted-color);
+    margin-bottom: 20px;
+}
+
+.single-article-pro .article-meta img {
+    width: 14px;
+    margin-left: 4px;
+}
+
+.single-article-pro .article-content p {
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.single-article-pro .author-info {
+    border-top: 1px solid var(--border-color);
+    margin-top: 30px;
+    padding-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.single-article-pro .author-info img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--primary-color);
+}
+
+.single-article-pro .author-details h4 {
+    font-family: "cairo-SemiBold", sans-serif;
+    margin-bottom: 5px;
+    font-size: 1.3rem;
+}
+
+.single-article-pro .author-details p {
+    font-size: 1rem;
+    color: var(--text-muted-color);
+}
+
+.single-article-pro .article-tags {
+    margin-top: 30px;
+    border-top: 1px solid var(--border-color);
+    padding-top: 15px;
+}
+
+.single-article-pro .article-tags span {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 20px;
+    margin: 0 5px 5px 0;
+    font-size: 0.9rem;
+    cursor: default;
+}
+
+/* Sidebar: Similar Articles */
+.single-article-pro .similar-articles {
+    background-color: #f7f7f7;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.single-article-pro .similar-articles h2 {
+    font-family: "cairo-Bold", sans-serif;
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+
+.single-article-pro .similar-article-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.single-article-pro .similar-article-item > img {
+    width: 80px;
+    height: 60px;
+    border-radius: 4px;
+    object-fit: cover;
+}
+
+.single-article-pro .similar-article-item h5 {
+    font-family: "cairo-SemiBold", sans-serif;
+    font-size: 1rem;
+    margin: 0 0 5px;
+    color: var(--text-color);
+}
+
+.single-article-pro .similar-article-item small {
+    font-size: 0.8rem;
+    color: var(--text-muted-color);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+
+.comments-section {
+    background-color: #f9f9f9;
+    padding: 60px 0;
+    border-top: 1px solid var(--border-color);
+}
+
+.comments-section h2 {
+    font-family: "cairo-Bold", sans-serif;
+    color: var(--text-color);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.comment-form {
+    max-width: 700px;
+    margin: 0 auto 30px auto;
+}
+
+.comment-form .form-label {
+    font-family: "cairo-SemiBold", sans-serif;
+}
+
+.comments-list .comment-item {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+}
+
+.comments-list .comment-item .d-flex {
+    gap: 10px;
+}
+
+.comments-list .comment-item h5 {
+    font-family: "cairo-SemiBold", sans-serif;
+    margin: 0;
+    font-size: 1.1rem;
+    color: var(--text-color);
+}
+
+
+/* Breadcrumb Navigation Styles placed below hero content */
+.breadcrumb-nav {
+    margin-top: 20px;
+    /* Space above breadcrumb */
+}
+
+.breadcrumb {
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+    font-size: 0.9rem;
+}
+
+.breadcrumb li {
+    display: inline;
+    color: var(--text-muted-color);
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    display: none;
+}
+
+.breadcrumb li a {
+    text-decoration: none;
+    color: var(--secondary-color);
+    transition: color 0.3s ease;
+}
+
+.breadcrumb li a:hover {
+    color: var(--primary-color);
+}
+
+.breadcrumb .active {
+    color: var(--text-color);
+    font-family: "cairo-SemiBold";
+
+}
+
+
+.about-course {
+    padding: 60px 0;
+}
+
+.about-course p {
+    margin-bottom: 20px;
+}
+
+.about-course p:last-child {
+    margin-bottom: 0;
+}
+
+.course-details {
+    padding: 60px 0;
+
+}
+
+.course-details .info-box .info-title {
+    color: var(--secondary-color);
+}
+
+.course-details .info-box ::before {
+    background: var(--secondary-color);
+
+}
+
+.course-details .section-title {
+    margin-bottom: 60px;
+}
+
+/* Custom styling for the support request form to enhance professionalism */
+.form-container {
+    background-color: #ffffff;
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+    border: 3px solid rgba(233, 233, 233, 1);
+}
+
+
+/* General form control styling */
+.form-container form .form-control {
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 12px 15px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    background-color: #fafafa;
+}
+
+/* Focus state for inputs and textareas */
+.form-container form .form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px rgba(244, 104, 142, 0.5);
+    background-color: #fff;
+}
+
+/* Styling for labels */
+.form-container form .form-label {
+    font-family: 'cairo-SemiBold', sans-serif;
+    font-size: 1rem;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+/* Adjusting checkboxes */
+.form-container form .form-check {
+    margin-bottom: 15px;
+}
+
+.form-container form .form-check-input {
+    margin-top: 0.4rem;
+}
+
+.form-container form .form-check-label {
+    font-size: 0.95rem;
+    color: #555;
+}
+
+/* Submit button styling */
+.form-container form .btn-primary {
+    background-color: var(--primary-color);
+    border: none;
+    font-size: 1.1rem;
+    padding: 12px 30px;
+    border-radius: 30px;
+    transition: background-color 0.3s ease;
+}
+
+.form-container form .btn-primary:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Responsive spacing for form rows */
+@media (max-width: 767.98px) {
+    .form-container form .row > [class^="col-"] {
+        margin-bottom: 15px;
+    }
+}
+
+
+/* Professional and Creative Partner Card Design */
+.partner-card {
+    background-color: #fff;
+    border: 2px solid #f2f2f2;
+    border-radius: 12px;
+    padding: 25px 15px;
+    margin: 10px 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Decorative Accent (a subtle gradient overlay at the bottom) */
+.partner-card::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+/* Styling the partner image with a circular mask and hover effect */
+.partner-card img {
+    width: 100%;
+    height: 100px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+    object-fit: cover;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+}
+
+/* Hover effect for the card and image */
+.partner-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.partner-card:hover img {
+    transform: scale(1.1);
+}
+
+/* Styling the partner name */
+.partner-name {
+    font-family: "cairo-SemiBold", sans-serif;
+    color: #333;
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+/* Professional and Creative Supporter Card Design */
+.supporter-card {
+    background-color: #fff;
+    border: 2px solid #f2f2f2;
+    border-radius: 12px;
+    padding: 25px 15px;
+    margin: 10px 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Decorative Accent for Supporter Card with a reversed gradient */
+.supporter-card::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+/* Styling the supporter image with a circular mask and hover effect */
+.supporter-card img {
+    width: 100%;
+    height: 100px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+    object-fit: cover;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+}
+
+/* Hover effect for the supporter card and image */
+.supporter-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.supporter-card:hover img {
+    transform: scale(1.1);
+}
+
+/* Styling the supporter name */
+.supporter-name {
+    font-family: "cairo-SemiBold", sans-serif;
+    color: #333;
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+
+/* Filter Bar */
+.filter-bar {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.filter-bar button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 30px;
+    background: var(--primary-color);
+    color: #fff;
+    font-family: "cairo-SemiBold", sans-serif;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.filter-bar button:hover,
+.filter-bar button.active {
+    background: var(--secondary-color);
+}
+
+/* Gallery Grid */
+.gallery-section {
+    padding: 0 0 60px 0;
+    background: #fff;
+}
+
+.gallery-section .section-title {
+
+    margin-bottom: 10px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #fff;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: scale(1.03);
+}
+
+.gallery-item img,
+.gallery-item video {
+    width: 100%;
+    display: block;
+    border-radius: 12px;
+}
+
+/* Classification Overlay Label */
+.gallery-item .overlay-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 12px;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    font-family: "cairo-SemiBold", sans-serif;
+    font-size: 1rem;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(-100%);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.gallery-item:hover .overlay-label {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Load More Button */
+.load-more-container {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.load-more-container button {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 30px;
+    background: var(--primary-color);
+    color: #fff;
+    font-family: "cairo-SemiBold", sans-serif;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.load-more-container button:hover {
+    background: var(--secondary-color);
+}
+
+.nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link.active {
+    font-family: "cairo-Bold";
+    color: var(--primary-color);
+}
+
+.chapter-title {
+    color: var(--primary-color);
+    font-family: "cairo-Bold";
+    font-size: 24px;
+    margin-bottom: 20px;
+
+}
+
+.owl-carousel2 p {
+    margin-bottom: 10px;
+}
+
+.owl-carousel2
+.card-body {
+
+}
+
+@media screen and (max-width: 768px) {
+    .navbar-nav .nav-link.active::after,
+    .navbar-nav .show > .nav-link::after {
+        display: none;
+    }
+}
+
+
+
+.al-Jazeera-logo-container{
+    position: relative;
+    z-index: 9;
+}
+.al-Jazeera-logo-container p{
+    font-size: 16px;
+    color: var(--text-muted-color);
+    margin-top: 10px;
+}
+
+
+.al-Jazeera-logo{
+    max-width: 180px;
+    width: 100%;
+
+}

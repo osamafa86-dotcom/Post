@@ -1,0 +1,311 @@
+:root {
+    /* Brand Colors */
+    --color-primary: #1565C0;
+    /* Strong deep blue */
+    --color-primary-hover: #0D47A1;
+    /* Darker blue for hover states */
+    --color-accent: #FFB300;
+    /* Warm accent (amber), balances blue */
+
+    /* Neutrals */
+    --color-surface: #F5F7FA;
+    /* Light grey-blue for subtle backgrounds */
+    --color-content-bg: #FFFFFF;
+    /* Clean background for content */
+    --color-border: #DDE2E6;
+    /* Softer grey border */
+    --color-dark: #1C1F26;
+    /* Nearly black for strong contrast */
+    --color-muted: #6B7280;
+    /* Muted text for less important info */
+
+    /* States */
+    --color-success: #2E7D32;
+    /* Calmer green tone for success */
+    --color-danger: #D32F2F;
+    /* Balanced red tone for alerts */
+
+    /* Typography */
+    --text-primary: #212121;
+    /* Main text color */
+    --text-secondary: var(--color-muted);
+    /* Subtext color */
+
+    /* Spacing scale */
+    --space-xxs: 4px;
+    --space-xs: 8px;
+    --space-sm: 16px;
+    --space-md: 24px;
+    --space-lg: 32px;
+    --space-xl: 64px;
+
+    /* Fluid spacing */
+    --space-fluid-sm: min(var(--space-sm), 4%);
+    --space-fluid-md: min(var(--space-md), 6%);
+    --space-fluid-lg: min(var(--space-lg), 8%);
+
+    /* Container padding */
+    --container-padding-horizontal: min(2em, 8%);
+    --container-padding-vertical: min(2em, 5%);
+
+    /* Border Radius */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 16px;
+    --radius-xl: 32px;
+
+    /* Fluid Font Sizes */
+    --font-xs: clamp(0.75rem, 0.6rem + 0.5vw, 0.875rem);
+    --font-sm: clamp(0.875rem, 0.7rem + 0.75vw, 1rem);
+    --font-md: clamp(1rem, 0.9rem + 1vw, 1.25rem);
+    --font-lg: clamp(1.25rem, 1.1rem + 1.5vw, 1.5rem);
+    --font-xl: clamp(1.5rem, 1.3rem + 2vw, 2rem);
+    --font-xxl: clamp(2rem, 1.5rem + 3vw, 3rem);
+    --font-display: clamp(3rem, 2rem + 4vw, 5rem);
+
+
+    /* Shadows */
+    --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.15);
+    --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.2);
+    --shadow-2xl: 0 25px 50px rgba(0, 0, 0, 0.25);
+    --shadow-inner: inset 0 2px 4px rgba(0, 0, 0, 0.06);
+    --shadow-none: none;
+}
+
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/* Fonts */
+@font-face {
+    font-family: "Montserrat-Light";
+    src: url(../fonts/Montserrat-Light.ttf);
+}
+
+@font-face {
+    font-family: "Montserrat-Medium";
+    src: url(../fonts/Montserrat-Medium.ttf);
+}
+
+@font-face {
+    font-family: "Montserrat-Regular";
+    src: url(../fonts/Montserrat-Regular.ttf);
+}
+
+@font-face {
+    font-family: "Montserrat-SemiBold";
+    src: url(../fonts/Montserrat-SemiBold.ttf);
+}
+
+@font-face {
+    font-family: "Montserrat-Bold";
+    src: url(../fonts/Montserrat-Bold.ttf);
+}
+
+@font-face {
+    font-family: "Montserrat-ExtraBold";
+    src: url(../fonts/Montserrat-ExtraBold.ttf);
+}
+
+
+/* Base Styles */
+body {
+    font-family: "Montserrat-Regular", sans-serif;
+    font-size: var(--font-md);
+    color: var(--text-primary);
+
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Montserrat-SemiBold";
+    margin: 0;
+    line-height: 150%;
+}
+
+h1 {
+    font-size: var(--font-display);
+}
+
+h2 {
+    font-size: var(--font-xxl);
+}
+
+h3 {
+    font-size: var(--font-xl);
+}
+
+h4 {
+    font-size: var(--font-lg);
+}
+
+h5 {
+    font-size: var(--font-md);
+}
+
+h6 {
+    font-size: var(--font-sm);
+}
+
+p {
+    font-size: var(--font-md);
+    margin-bottom: 0;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    -webkit-transition: color 0.3s ease;
+    -o-transition: color 0.3s ease;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--color-primary);
+}
+
+.badge {
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+}
+
+/* Buttons */
+.btn {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    gap: var(--space-xs);
+    padding: var(--space-xs) var(--space-md);
+    font-size: var(--font-sm);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: #fff;
+    border: 1px solid var(--color-primary);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-primary-hover);
+    border-color: var(--color-primary-hover);
+}
+
+.btn-secondary {
+    background-color: var(--color-accent);
+    color: var(--color-dark);
+    border: 1px solid var(--color-accent);
+}
+
+.btn-secondary:hover {
+    background-color: #b0def0;
+}
+
+/* Utilities */
+.text-muted {
+    color: var(--text-secondary) !important;
+}
+
+.rounded {
+    border-radius: var(--radius-md) !important;
+}
+
+.section {
+    padding: var(--space-xl) 0;
+}
+
+input::-webkit-input-placeholder {
+    text-align: start;
+    font-size: var(--font-sm);
+}
+
+input::-moz-placeholder {
+    text-align: start;
+    font-size: var(--font-sm);
+}
+
+input:-ms-input-placeholder {
+    text-align: start;
+    font-size: var(--font-sm);
+}
+
+input::-ms-input-placeholder {
+    text-align: start;
+    font-size: var(--font-sm);
+}
+
+input::placeholder {
+    text-align: start;
+    font-size: var(--font-sm);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Generic overlay (full cover) */
+.overlay {
+    position: absolute; /* positioned relative to parent */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* semi-transparent black */
+    z-index: 0; /* above background, below content */
+}
+
+
+.bg-primary {
+    background: var(--color-primary) !important;
+}
+
+.cat_culture {
+    background: #E0F2F1;
+    color: #00695C;
+}
+
+.cat_news {
+    background: #E3F2FD;
+    color: #1565C0;
+}
+
+.cat_opinion {
+    background: #FFEBEE;
+    color: #C62828;
+}
+
+
+.cat_features {
+    background: #FFF3E0;
+    color: #EF6C00;
+}

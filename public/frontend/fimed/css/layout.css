@@ -1,0 +1,119 @@
+/* ==========================================================================
+   📰 FIMED - LAYOUT
+   Container & Grid Systems
+   ========================================================================== */
+
+/* ========================================
+   📦 CONTAINER
+   ======================================== */
+
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--space-lg);
+}
+
+/* ========================================
+   📊 GRIDS
+   ======================================== */
+
+.hero__grid {
+    display: grid;
+    grid-template-columns: 1fr 1.6fr 1fr;
+    gap: 0;
+    min-height: 440px;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+}
+
+.reports__grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 40px;
+    align-items: stretch;
+}
+
+.voice-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: var(--space-lg);
+}
+
+.cat-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-lg);
+}
+
+.mr-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: var(--space-md);
+}
+
+.op-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg);
+}
+
+/* ========================================
+   📱 RESPONSIVE
+   ======================================== */
+
+@media (max-width: 1200px) {
+    .hero__grid {
+        grid-template-columns: 1fr 1.4fr 1fr;
+        min-height: 400px;
+    }
+
+    .mr-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 1024px) {
+    .hero__grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .hero__sidebar {
+        display: none;
+    }
+
+    .reports__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cat-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .op-grid,
+    .voice-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .mr-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero__grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: 300px auto;
+    }
+
+    .cat-grid,
+    .op-grid,
+    .mr-grid,
+    .voice-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .rp-card {
+        grid-template-columns: 1fr;
+    }
+}

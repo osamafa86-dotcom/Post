@@ -78,3 +78,7 @@ error_log
 Homestead.json
 Homestead.yaml
 .vagrant/
+
+# Backup files created by maintenance scripts
+.env.bak.*
+*.env.bak

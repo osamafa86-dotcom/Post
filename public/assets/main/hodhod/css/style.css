@@ -1,0 +1,3126 @@
+/* Hodhod Header Styling */
+
+.hodhod-header .news-ticker {
+    background-color: var(--color-primary);
+    color: white;
+    padding: var(--space-xs) var(--space-sm);
+}
+
+.hodhod-header .news-ticker .badge {
+    background-color: var(--color-accent);
+    color: var(--color-dark);
+    margin-inline-end: var(--space-xs);
+}
+
+.hodhod-header .topbar {
+    padding: var(--space-xs) 0;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.hodhod-header .logo img {
+    height: 100px;
+}
+
+.hodhod-header .search-bar {
+    background-color: var(--color-primary);
+    color: white;
+    padding: var(--space-sm) 0;
+}
+
+.hodhod-header .search-bar .btn {
+    background-color: white;
+    color: var(--color-primary);
+}
+
+.hodhod-header .social-icons i {
+    color: white;
+    font-size: 1.8rem;
+}
+
+/* News Ticker Container */
+.hodhod-header .news-ticker {
+    background-color: var(--color-primary);
+    color: white;
+    padding: var(--space-xs) var(--space-sm);
+    font-size: var(--font-sm);
+    white-space: nowrap;
+}
+
+/* News Badge */
+.hodhod-header .news-ticker .badge {
+    background-color: var(--color-accent);
+    color: var(--color-dark);
+    margin-inline-end: var(--space-xs);
+    font-weight: bold;
+    font-size: var(--font-sm);
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius-sm);
+}
+
+.hodhod-header .news-track {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    direction: ltr;
+}
+
+.hodhod-header .news-list {
+    display: flex;
+    gap: var(--space-lg);
+    will-change: transform;
+}
+
+.hodhod-header .news-item {
+    flex-shrink: 0;
+    white-space: nowrap;
+    padding-inline: var(--space-sm);
+    color: white;
+    font-weight: 400;
+}
+
+
+.nav-link {
+    color: var(--color-primary);
+    display: flex;
+    padding: 4px 8px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background: transparent;
+    height: 35px;
+    border-right: 2px solid transparent;
+}
+
+.nav-item:hover .nav-link,
+.nav-item.active .nav-link {
+    display: flex;
+    background: #E7F4FE;
+    border-right: 2px solid var(--color-primary);
+    color: var(--color-primary-hover);
+
+}
+
+/* 1) Hide Bootstrap’s click-driven caret */
+.nav-item.dropdown .nav-link .dropdown-toggle::after {
+    display: none;
+
+}
+
+/* 2) Show menu on hover (desktop) */
+.nav-item.dropdown:hover > .dropdown-menu {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
+
+/* 3) Ensure it doesn’t flicker */
+.nav-item.dropdown .dropdown-menu {
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0px 4px 15px 0px rgba(205, 232, 254, 0.75);
+    transition: opacity 0.2s ease;
+    margin-top: 0;
+    padding: 0;
+}
+
+.nav-item.dropdown .dropdown-menu .dropdown-item {
+    border-bottom: 1px solid #CDE8FE;
+    background: #FCFCFC;
+    padding: 8px 15px;
+    color: var(--color-primary-hover);
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+
+}
+
+.nav-item.dropdown .dropdown-menu .dropdown-item:hover {
+    background: #E7F4FE;
+    border-right: 2px solid var(--color-primary);
+    color: var(--color-primary-hover);
+}
+
+/* 4) Style the little arrow icon */
+.dropdown-arrow {
+    font-size: 0.8rem;
+    color: var(--color-primary);
+    transition: transform 0.2s ease;
+}
+
+/* 5) Rotate arrow on hover */
+.nav-item.dropdown:hover .dropdown-arrow {
+    transform: rotate(180deg);
+    color: var(--color-accent);
+}
+
+/* 6) Optional: prevent click toggling */
+.nav-item.dropdown > .nav-link {
+    cursor: pointer;
+}
+
+.nav-item.dropdown > .nav-link[data-bs-toggle] {
+    pointer-events: none;
+    /* disable the bootstrap toggle click */
+}
+
+.dropdown-toggle::after {
+    display: none;
+}
+
+.banner-bar img {
+    width: 100%;
+    object-fit: cover;
+
+}
+
+
+.card-title {
+    font-family: "Al-Jazeera-Bold", sans-serif;
+    margin-bottom: var(--space-xs);
+
+}
+
+.date,
+.author {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    color: var(--color-primary);
+    font-size: 12px;
+    font-family: "Al-Jazeera-Bold";
+
+}
+
+.date img,
+.author img {
+    width: 16px !important;
+    height: auto !important;
+}
+
+.category {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    color: var(--color-primary);
+    border-right: 1px solid var(--color-primary);
+    background: #CDE8FE;
+    width: max-content;
+    padding: 4px;
+    text-align: center;
+    font-size: 12px;
+    font-family: "Al-Jazeera-Bold";
+    border-radius: 4px;
+    line-height: 150%;
+}
+
+/* Start Main Featured News */
+.main-featured-news {
+}
+
+/* Start Main Featured News */
+.main-featured-news-articles .featured-news-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: var(--space-md);
+}
+
+/* Large item spans first column and both rows */
+.featured-news-item-large {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+}
+
+/* Small items placed in a 2×2 block on the right */
+.featured-news-item-small:nth-child(2) {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+}
+
+.featured-news-item-small:nth-child(3) {
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
+}
+
+.featured-news-item-small:nth-child(4) {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
+
+.featured-news-item-small:nth-child(5) {
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
+}
+
+
+.main-featured-news-home .featured-news-grid {
+    display: grid;
+    /* 3 columns: left big (2fr), right side split into two equal (1fr each) */
+    grid-template-columns: 2fr 1fr 1fr;
+    /* 2 rows: top and bottom */
+    grid-template-rows: 1fr 1fr;
+    /* place areas */
+    grid-template-areas:
+    "card-area-1 card-area-2 card-area-2"
+    "card-area-1 card-area-3 card-area-4";
+    gap: var(--space-md);
+    height: 550px;
+
+}
+
+/* assign each card to its area */
+.main-featured-news-home .featured-news-grid .card-area-1 {
+    grid-area: card-area-1;
+}
+
+.main-featured-news-home .featured-news-grid .card-area-2 {
+    grid-area: card-area-2;
+}
+
+.main-featured-news-home .featured-news-grid .card-area-3 {
+    grid-area: card-area-3;
+}
+
+.main-featured-news-home .featured-news-grid .card-area-4 {
+    grid-area: card-area-4;
+}
+
+.card-area-4 h3,
+.card-area-3 h3 {
+    font-size: var(--font-md);
+    margin: var(--space-xs) 0;
+
+}
+
+/* ensure each .main-card fills its grid cell */
+.featured-news-grid .main-card {
+    width: 100%;
+    height: 100%;
+}
+
+
+.featured-news-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius-md);
+    background-color: var(--color-surface);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.featured-news-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.featured-news-item .featured-news-image {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+}
+
+
+.featured-news-item .featured-news-image::after {
+    content: "";
+    background: rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.featured-news-item .featured-news-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: var(--space-sm);
+    color: white;
+}
+
+
+.featured-news-item .featured-news-content .card-title {
+    font-size: var(--font-xl);
+    margin: var(--space-xs) 0;
+
+
+}
+
+.featured-news-item-small .featured-news-content .card-title {
+    font-size: var(--font-lg);
+
+}
+
+.card {
+    border: none;
+    border-radius: var(--radius-lg);
+    box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+
+}
+
+.card-image .card-img-top {
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+.card .card-title {
+    margin: var(--space-xs) 0;
+}
+
+.sidebar {
+    border-radius: var(--radius-lg);
+    border: 2px solid hsl(240, 100%, 90%);
+    background: #F7F7FF;
+    padding: 24px 16px;
+}
+
+
+/* Professional widget title styling */
+.sidebar-widget .widget-title {
+    font-family: "Al-Jazeera-Bold", sans-serif;
+    /* bold font */
+    font-size: clamp(1.125rem, 1.1vw + 0.95rem, 1.3125rem);
+    /* large font size for widgets */
+    color: var(--color-primary);
+    /* primary brand color */
+    position: relative;
+    /* enable positioning of pseudo-element */
+    padding-bottom: var(--space-sm);
+    /* spacing below title */
+    margin-bottom: var(--space-md);
+    /* spacing below widget title */
+    display: inline-block;
+    /* shrink to text width */
+    text-transform: uppercase;
+    /* transform text to uppercase */
+}
+
+/* Underline pseudo-element */
+.sidebar-widget .widget-title::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 50px;
+    /* initial underline width */
+    height: 3px;
+    /* underline thickness */
+    background-color: var(--color-primary);
+    /* accent color for underline */
+    border-radius: var(--radius-sm);
+    /* rounded edges for underline */
+    transition: width 0.3s ease;
+    /* smooth width transition */
+}
+
+/* Expand underline on hover */
+.sidebar-widget .widget-title:hover::after {
+    width: 100%;
+    /* full width on hover */
+}
+
+
+/* Infographic slider images */
+.infographic-slider .item img {
+    width: 100%;
+    aspect-ratio: 3/3.2;
+    object-fit: cover;
+    display: block;
+    border-radius: var(--radius-lg);
+}
+
+/* Dots styling */
+.owl-theme .owl-dots {
+    text-align: center;
+    margin-top: var(--space-xs);
+}
+
+.owl-theme .owl-dots .owl-dot span {
+    width: 8px;
+    height: 8px;
+    background: #CDE8FE;
+    display: inline-block;
+    border-radius: 50%;
+    margin: 0 var(--space-xs);
+    transition: background 0.3s ease;
+}
+
+.owl-theme .owl-dots .owl-dot.active span {
+    background: var(--color-primary);
+    border-radius: 6px;
+    width: 36px;
+    height: 8px;
+}
+
+/* Most Read Widget Styles */
+.sidebar-widget .most-read-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: var(--space-sm);
+}
+
+/* Each most-read item */
+.sidebar-widget .most-read-item {
+    align-items: flex-start;
+    gap: 10px;
+}
+
+/* Thumbnail image */
+.sidebar-widget .most-read-item > a {
+    width: 80px;
+    height: 80px;
+
+}
+
+.small-news-card h6 a {
+    font-size: 14px;
+}
+
+.homepage-featured .small-news-card .container-img {
+    flex: 0 0 80px;
+    width: 80px;
+    height: 80px;
+}
+
+.sidebar-widget .most-read-item > a img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: var(--radius-md);
+}
+
+/* Container for text */
+.sidebar-widget .item-content {
+    flex: 1;
+}
+
+/* Category badge */
+.sidebar-widget .category {
+    padding: 2px 8px;
+}
+
+/* Article title */
+.sidebar-widget .item-title {
+    font-family: "Al-Jazeera-Bold";
+
+    font-size: var(--font-xs);
+    color: var(--text-primary);
+    transition: color 0.3s ease;
+}
+
+.sidebar-widget .item-title:hover {
+    color: var(--color-primary);
+}
+
+/* Meta info (author & time) */
+.sidebar-widget .item-meta {
+    font-size: var(--font-xs);
+}
+
+.sidebar-widget .item-meta i {
+    font-size: 0.9em;
+}
+
+/* Caricature slider images */
+.caricature-slider .item img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    display: block;
+    border-radius: var(--radius-lg);
+
+}
+
+/* Overlay caption */
+.caricature-slider .overlay {
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    font-size: var(--font-xs);
+    text-align: center;
+    border-bottom-left-radius: var(--radius-md);
+    border-bottom-right-radius: var(--radius-md);
+}
+
+/* Hide pagination dots */
+.caricature-slider .owl-dots {
+    display: none;
+}
+
+/* Navigation arrows */
+.caricature-slider .owl-nav button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.caricature-slider .owl-nav .owl-prev {
+    left: 8px;
+}
+
+.caricature-slider .owl-nav .owl-next {
+    right: 8px;
+}
+
+.caricature-slider .owl-nav button i {
+    color: var(--color-primary);
+    font-size: 0.9rem;
+}
+
+/* Newsletter widget container */
+.sidebar-widget .newsletter-widget {
+    background-color: #fff;
+    padding: var(--space-md);
+    border-radius: var(--radius-lg);
+    text-align: center;
+    border: 1px solid #e5e5ff;
+}
+
+/* Newsletter logo image */
+.sidebar-widget .newsletter-widget .newsletter-logo {
+    width: 60px;
+    height: auto;
+}
+
+/* Description text */
+.sidebar-widget .newsletter-widget .newsletter-text {
+    font-size: var(--font-sm);
+    color: var(--text-secondary);
+    line-height: 150%;
+}
+
+/* Input group styling */
+.sidebar-widget .newsletter-widget .input-group-text {
+    background-color: var(--color-primary);
+    color: #fff;
+    border-top-left-radius: var(--radius-md);
+    border-bottom-left-radius: var(--radius-md);
+    border: 1px solid var(--color-border);
+}
+
+.sidebar-widget .newsletter-widget .form-control {
+    border-top-right-radius: var(--radius-md);
+    border-bottom-right-radius: var(--radius-md);
+    border: 1px solid var(--color-border);
+    border-right: none;
+    font-size: var(--font-sm);
+}
+
+/* Subscribe button */
+.sidebar-widget .newsletter-widget .subscribe-btn {
+    background-color: var(--color-accent);
+    color: var(--color-dark);
+    border: none;
+    padding: var(--space-xs) 0;
+    font-size: var(--font-md);
+    border-radius: var(--radius-md);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sidebar-widget .newsletter-widget .subscribe-btn:hover {
+    background-color: var(--color-primary);
+    color: #fff;
+}
+
+/* Important Categories Styles */
+.sidebar-widget .important-categories {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar-widget .category-item {
+    margin-bottom: var(--space-sm);
+    height: 80px;
+}
+
+.sidebar-widget .category-link {
+    position: relative;
+    display: block;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    height: 100%;
+}
+
+.sidebar-widget .category-link:hover {
+    transform: translateY(-4px);
+}
+
+.sidebar-widget .category-link img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Link icon in top-left */
+.sidebar-widget .category-icon {
+    position: absolute;
+    top: var(--space-xs);
+    left: var(--space-xs);
+    background: rgba(255, 255, 255, 0.8);
+    padding: var(--space-xxs);
+    border-radius: var(--radius-sm);
+    font-size: var(--font-sm);
+    color: var(--color-primary);
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Category label in bottom-right */
+.sidebar-widget .category-label {
+    position: absolute;
+    bottom: var(--space-xs);
+    right: var(--space-xs);
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    padding: var(--space-xxs) var(--space-sm);
+    font-size: var(--font-xs);
+    border-radius: var(--radius-lg);
+    transition: background 0.3s ease;
+}
+
+/* Hover state */
+.sidebar-widget .category-link:hover .category-icon {
+    background: var(--color-primary);
+    color: #fff;
+}
+
+.sidebar-widget .category-link:hover .category-label {
+    background: var(--color-accent);
+}
+
+/* Reset list */
+.sidebar-widget .read-also-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Align icon and text */
+.sidebar-widget .read-also-item {
+    align-items: flex-start;
+}
+
+/* Bullet icon styling */
+.sidebar-widget .bullet-icon {
+    font-size: var(--font-xs);
+    color: var(--color-primary);
+    margin-top: 0.4em;
+}
+
+/* Link styling */
+.sidebar-widget .read-also-link {
+    font-family: "Al-Jazeera-Bold";
+
+    color: var(--text-primary);
+    font-size: var(--font-sm);
+    line-height: 1.5;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* Hover state */
+.sidebar-widget .read-also-link:hover {
+    color: var(--color-primary);
+}
+
+/* ===== Pagination — Pro Look ===== */
+.pagination-container {
+    --size: 38px;
+    --radius: 10px;
+    --gap: .5rem;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: var(--space-md) 0;
+    margin-top: 40px;
+    border-top: 1px solid var(--color-border);
+}
+
+.pagination-info {
+    font-size: var(--font-sm);
+    color: var(--text-secondary);
+    white-space: nowrap;
+}
+
+/* controls row */
+.pagination-controls {
+    display: flex;
+    align-items: center;
+    gap: var(--gap);
+    direction: ltr; /* الأرقام والأسهم من الشمال لليمين */
+}
+
+/* unify chip button styles (prev/next + numbers) */
+.pagination-controls .page-btn,
+.pagination-list .page-number {
+    min-width: var(--size);
+    height: var(--size);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 .75rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--color-border);
+    background: var(--surface, #fff);
+    color: var(--text-primary);
+    font-size: .9rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform .05s ease, background .2s ease, color .2s ease, border-color .2s ease, box-shadow .2s ease;
+    outline: none;
+}
+
+.pagination-controls .page-btn:hover,
+.pagination-list .page-number:hover {
+    background: var(--color-surface, #f7f7fb);
+    border-color: var(--color-border);
+}
+
+.pagination-controls .page-btn:active,
+.pagination-list .page-number:active {
+    transform: translateY(1px);
+}
+
+/* icons size */
+.pagination-controls .page-btn i {
+    font-size: .95rem;
+}
+
+/* active/current page */
+.pagination-list .page-number.active,
+.pagination-list .page-number[aria-current="page"] {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+    color: #fff;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, .08);
+    pointer-events: none;
+}
+
+/* disabled state for arrows */
+.page-btn.is-disabled,
+.page-btn.disabled,
+.page-btn[aria-disabled="true"] {
+    opacity: .45;
+    filter: saturate(.3);
+    pointer-events: none;
+    cursor: default;
+}
+
+/* list reset */
+.pagination-list {
+    display: flex;
+    gap: .35rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* small screens: وسط التحكم وخلي النص تحت */
+@media (max-width: 576px) {
+    .pagination-container {
+        justify-content: center;
+        gap: .75rem 1rem;
+    }
+
+    .pagination-info {
+        order: 3;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Dark mode tweaks */
+[data-bs-theme="dark"] .pagination-controls .page-btn,
+[data-bs-theme="dark"] .pagination-list .page-number {
+    background: rgba(255, 255, 255, .04);
+    border-color: #313244;
+    color: #e5e7eb;
+}
+
+[data-bs-theme="dark"] .pagination-controls .page-btn:hover,
+[data-bs-theme="dark"] .pagination-list .page-number:hover {
+    background: rgba(255, 255, 255, .08);
+}
+
+[data-bs-theme="dark"] .pagination-list .page-number.active,
+[data-bs-theme="dark"] .pagination-list .page-number[aria-current="page"] {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+    color: #fff;
+}
+
+/* Optional: focus ring للوصولية */
+.pagination-controls .page-btn:focus-visible,
+.pagination-list .page-number:focus-visible {
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, .25);
+}
+
+/* Footer Base */
+.site-footer {
+    background-color: #0F0D35;
+    color: #fff;
+    padding: 1.5rem 0;
+    margin-top: var(--container-padding-vertical);
+}
+
+/* Widget Title */
+.footer-title {
+    font-size: clamp(1.125rem, 1.1vw + 0.95rem, 1.3125rem);
+    display: inline-block;
+}
+
+/* Separator under title */
+.footer-separator {
+    border: none;
+    border-bottom: 1px dashed var(--color-border);
+    margin-bottom: var(--space-sm);
+}
+
+/* About Text */
+.footer-about-text {
+    font-size: var(--font-sm);
+    color: #CDE8FE;
+    line-height: 1.6;
+}
+
+/* Categories List */
+.footer-cats-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs) var(--space-sm);
+}
+
+.footer-cat {
+    display: inline-block;
+    padding: var(--space-xxs) var(--space-xs);
+    font-size: var(--font-xs);
+    color: #CDE8FE;
+    border: 1px solid #CDE8FE;
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.footer-cat:hover {
+    background-color: #fff;
+    color: var(--color-dark);
+}
+
+/* Social Links */
+.footer-social-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-sm);
+}
+
+.footer-social {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-xs);
+    padding: var(--space-xs) var(--space-sm);
+    font-size: var(--font-sm);
+    border: 1px solid #CDE8FE;
+    box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.25);
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.icon-circle {
+    background: hsla(206, 95%, 90%, 1);
+    width: 24px;
+    height: 24px;
+    color: var(--color-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.footer-social:hover {
+    background-color: #fff;
+    color: var(--color-dark);
+}
+
+/* Bottom Separator */
+.footer-bottom-separator {
+    border: none;
+    border-top: 1px solid var(--color-border);
+}
+
+
+/* End Main Featured News */
+
+
+/* Article page wrapper */
+.article-page {
+
+    color: var(--text-primary);
+}
+
+/* Header */
+.article-header {
+    margin-bottom: var(--space-md);
+}
+
+.article-title {
+    font-size: var(--font-xl);
+    line-height: 1.3;
+    margin-bottom: var(--space-sm);
+}
+
+/* Meta bar */
+.article-meta .btn-icon {
+    border-radius: 8px;
+    border: 1px solid var(--color-primary);
+    COlor: var(--color-primary);
+    background: rgba(235, 234, 255, 0.20);
+    display: flex;
+    width: 40px;
+    height: 40px;
+    padding: 4px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* ===== Share menu (slide from the right of the button) ===== */
+.article-meta .share-wrap {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+}
+
+/* the bubble of icons */
+.article-meta .share-menu {
+    position: absolute;
+    top: 50%;
+    /* logical start: on LTR it's left of the button; on RTL it's right of the button */
+    inset-inline-end: 100%;
+    transform: translateY(-50%) translateX(8px);
+    display: flex;
+    gap: 8px;
+    background: rgba(235, 234, 255, 0.20);
+    padding: 4px 10px;
+    height: 40px;
+    border-radius: 8px;
+    border: 1px solid var(--color-primary);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .08);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity .25s ease, visibility .25s ease, transform .25s ease, inset-inline-start .25s ease;
+    z-index: 5;
+}
+
+/* when open: slide a bit further to the inline start (right in RTL) */
+.article-meta .share-wrap.open .share-menu {
+    inset-inline-end: calc(100% + 8px);
+    transform: translateY(-50%) translateX(0);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.article-meta .share-menu a,
+.article-meta .share-menu button.copy-link {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, .08);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    cursor: pointer;
+    color: var(--color-primary);
+}
+
+.article-meta .share-menu a:hover,
+.article-meta .share-menu button.copy-link:hover {
+    background: rgba(235, 234, 255, 0.35);
+}
+
+/* Optional: icon sizing if you're using <i> from Font Awesome */
+.article-meta .share-menu i {
+    font-size: 14px;
+    line-height: 1;
+}
+
+
+.article-meta .meta-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25em;
+    font-size: var(--font-sm);
+    color: var(--text-secondary);
+}
+
+/* Featured image */
+.article-featured-img img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    height: 500px;
+    object-fit: cover;
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-lg);
+}
+
+/* Body paragraphs */
+.article-body p {
+    font-size: var(--font-md);
+    line-height: 1.8;
+    margin-bottom: var(--space-md);
+}
+
+.article-body video {
+    width: 100%;
+}
+
+/* Figure */
+.article-figure {
+    margin: 0;
+    text-align: center;
+}
+
+.article-figure img {
+    width: 100%;
+    border-radius: var(--radius-md);
+    object-fit: cover;
+}
+
+.article-figure figcaption {
+    margin-top: var(--space-xs);
+    font-size: var(--font-sm);
+    color: var(--text-secondary);
+}
+
+/* Tags */
+.article-tags {
+    margin-top: var(--space-md);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.tags-title {
+    color: var(--color-primary);
+    font-size: 24px;
+    border-right: 2px solid var(--color-primary);
+    background: #EBEBFA;
+    display: flex;
+    padding: 6px 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: max-content;
+}
+
+.article-tags .tag {
+    display: inline-block;
+
+    padding: 4px 10px;
+    font-size: var(--font-xs);
+    background: var(--color-surface);
+    color: var(--color-primary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    transition: background 0.3s ease, color 0.3s ease;
+    border-radius: 4px;
+    border: 1px solid #C4C2F0;
+    background: #EBEBFA;
+}
+
+.article-tags .tag:hover {
+    background: var(--color-primary);
+    color: #fff;
+}
+
+/* Related News Section */
+.related-news {
+    padding-top: 0;
+}
+
+
+/* Card base */
+.related-card {
+    border: none;
+    border-radius: var(--radius-md);
+    background: #FFF;
+    box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+}
+
+
+/* Content vs image */
+.related-card .card-content {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
+
+.related-card .card-img {
+    flex-shrink: 0;
+    width: 200px;
+    height: 160px;
+    overflow: hidden;
+}
+
+.related-card .card-title {
+    margin: 0;
+}
+
+/* Image styling */
+.related-card .card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+/* Title link */
+.related-card .card-title a {
+    color: var(--text-primary);
+    font-size: var(--font-md);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.related-card .card-title a:hover {
+    color: var(--color-primary);
+}
+
+/* Meta info */
+.related-card .meta {
+    font-size: var(--font-xs);
+    color: var(--text-secondary);
+}
+
+/* Read more link */
+.related-card .read-more {
+    font-size: var(--font-sm);
+    color: var(--color-primary);
+    text-decoration: none;
+    align-self: flex-end;
+}
+
+.related-card .read-more i {
+    margin-inline-start: var(--space-xxs);
+}
+
+.related-card .read-more:hover {
+    text-decoration: underline;
+}
+
+/* --------------------------------- */
+/* About Hero Section                */
+/* --------------------------------- */
+.about-hero {
+    padding: var(--space-md) 0 60px;
+    background: var(--color-surface);
+}
+
+.breadcrumb {
+    justify-content: end;
+    font-size: var(--font-xs);
+    color: var(--text-secondary);
+}
+
+.breadcrumb a {
+    color: var(--color-primary);
+    font-size: 16px;
+    font-family: "Al-Jazeera-Bold";
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.breadcrumb a:hover {
+    color: var(--color-primary);
+}
+
+.breadcrumb span {
+    color: var(--text-primary);
+    font-size: 16px;
+    font-family: "Al-Jazeera-Bold";
+
+    margin: 0 var(--space-xs);
+}
+
+/* Features list (left column) */
+.features-list .widget-title {
+    display: flex;
+    padding: 6px 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: max-content;
+    border-right: 2px solid var(--color-accent);
+    color: var(--color-accent);
+    font-family: "Al-Jazeera-Bold";
+    background: #FFF8EB;
+    font-size: var(--font-lg);
+    margin-bottom: var(--space-md);
+}
+
+.features-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.features-list ul li {
+    position: relative;
+    padding-inline-start: var(--space-md);
+    margin-bottom: var(--space-sm);
+    font-size: var(--font-md);
+    color: var(--text-primary);
+}
+
+.features-list ul li::before {
+    content: "";
+    position: absolute;
+    margin-inline-start: -20px;
+    top: 0.6em;
+    width: 8px;
+    height: 8px;
+    background: var(--color-primary);
+    border-radius: 50%;
+}
+
+/* About text (right column) */
+.about-text {
+    flex: 0 0 37%;
+}
+
+.title-section {
+    font-size: var(--font-xxl);
+    line-height: 150%;
+    color: var(--text-primary);
+}
+
+.about-text .highlight {
+    color: var(--color-accent);
+}
+
+.about-text p {
+    font-size: var(--font-md);
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* Call-to-action button */
+.about-text .btn-primary {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+}
+
+.about-text .btn-primary:hover {
+    background: var(--color-primary-hover);
+    border-color: var(--color-primary-hover);
+}
+
+/* Circular image */
+.about-hero .about-image {
+    width: 430px;
+}
+
+.about-hero .about-image img {
+    width: 100%;
+
+    display: block;
+}
+
+/* Platform Intro Section */
+.platform-intro {
+    color: var(--text-primary);
+}
+
+
+/* Highlighted word */
+.platform-text .highlight {
+    color: var(--color-accent);
+}
+
+/* Image containers */
+.platform-img {
+    height: 525px;
+    overflow: hidden;
+    border-radius: 140px;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+
+.platform-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    object-position: right;
+
+}
+
+.platform-img:nth-child(2) img {
+    object-position: center;
+}
+
+.platform-img:nth-child(3) img {
+    object-position: left;
+}
+
+
+/* Mission Section Hero */
+.mission-hero {
+    background-size: cover;
+    background-position: center;
+    /* Fallback background color while the image is loading */
+    background-color: lightgray;
+
+    /* Layer a semi-transparent black gradient over the image */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../img/mission-bg.jpg");
+
+    /* Center the image, cover the container, and don’t repeat */
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 450px;
+    border-radius: 16px;
+}
+
+/* Overlay on hero */
+.mission-hero .overlay {
+    width: 100%;
+    height: 100%;
+}
+
+
+.cards-mission {
+    margin-top: -140px
+}
+
+
+.mission-hero p {
+    font-size: var(--font-md);
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Mission cards */
+.mission-card {
+    border-radius: 16px;
+    background: #FFF;
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.mission-card .icon-wrapper {
+    display: flex;
+    width: 64px;
+    height: 64px;
+    padding: 16px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    margin: auto;
+    border-radius: 32px;
+    background: #CDE8FE;
+    border-radius: 50%;
+    font-size: 1.25rem;
+}
+
+/* Card titles */
+.mission-card h5 {
+    font-size: var(--font-lg);
+    color: var(--text-primary);
+}
+
+.mission-card p {
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+
+/* Objectives Section */
+.objectives-section {
+    position: relative;
+    padding: var(--space-xl) 0;
+}
+
+/* Subtle dotted background */
+.objectives-section::before {
+    content: "";
+    position: absolute;
+    top: 10%;
+    right: 15%;
+    width: 200px;
+    height: 200px;
+    background-image: radial-gradient(var(--color-border) 1px, transparent 1px);
+    background-size: 8px 8px;
+    opacity: 0.15;
+    pointer-events: none;
+}
+
+
+/* Title and highlight */
+.obj-title {
+    font-size: var(--font-xxl);
+    line-height: 1.3;
+    color: var(--text-primary);
+}
+
+.obj-title .highlight {
+    color: var(--color-accent);
+}
+
+/* Objectives list */
+.objectives-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.objectives-list li {
+    position: relative;
+    padding-inline-start: var(--space-md);
+    margin-bottom: var(--space-sm);
+    font-size: var(--font-md);
+    color: var(--text-primary);
+}
+
+.objectives-list li::before {
+    content: "";
+    position: absolute;
+    margin-inline-start: -20px;
+    top: 0.6em;
+    width: 8px;
+    height: 8px;
+    background: var(--color-primary);
+    border-radius: 50%;
+}
+
+
+/* Main circle */
+.objectives-img.main {
+    width: 300px;
+    height: 300px;
+    top: 0;
+    right: 0;
+}
+
+/* Smaller circles */
+.objectives-img.small1 {
+    width: 120px;
+    height: 120px;
+    top: 20%;
+    right: 250px;
+}
+
+.objectives-img.small2 {
+    width: 100px;
+    height: 100px;
+    bottom: 0;
+    right: 180px;
+}
+
+
+/* Hero Contact Section */
+.hero-contact {
+    /* Fallback background color while the image is loading */
+    background-color: lightgray;
+
+    /* Layer a semi-transparent black gradient over the image */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../img/contact-bg.jpg");
+
+    /* Center the image, cover the container, and don’t repeat */
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 300px;
+}
+
+/* Dark overlay */
+.hero-contact .overlay {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+/* Content centering */
+.contact-content {
+    height: 100%;
+    padding: var(--space-lg);
+}
+
+/* Title styling */
+.hero-contact .title-section {
+    font-size: var(--font-xxl);
+    color: #fff;
+}
+
+/* Lead paragraph */
+.hero-contact .lead {
+    font-size: var(--font-md);
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 600px;
+}
+
+/* Button */
+.btn-secondary {
+    background-color: var(--color-accent);
+    color: var(--color-dark);
+    border: none;
+    transition: background 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #e0a70f;
+    color: #fff;
+}
+
+/* Contact Section */
+.contact-section {
+    padding-top: 20px;
+    padding-bottom: 60px;
+    background: var(--color-surface);
+}
+
+/* Info cards */
+.info-card {
+    background: hsl(212, 100%, 97%);
+    box-shadow: 0px 0px 4px 0px hsla(212, 100%, 50%, 0.25);
+    border-radius: var(--radius-lg);
+    transition: box-shadow 0.3s;
+    min-height: 95px;
+}
+
+
+.icon-circle {
+    background: var(--color-primary);
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+/* Contact form wrapper */
+.contact-form-wrapper {
+    background: hsl(212, 100%, 97%);
+    box-shadow: 0px 0px 4px 0px hsla(212, 100%, 50%, 0.25);
+}
+
+/* Form controls */
+.contact-form .form-label {
+    font-size: var(--font-sm);
+    color: var(--text-secondary);
+    font-family: "Al-Jazeera-Bold";
+}
+
+.contact-form .form-control {
+    border: 1px solid hsl(212, 100%, 90%);;
+    border-radius: var(--radius-sm);
+    padding: var(--space-xs) var(--space-sm);
+    font-size: var(--font-sm);
+}
+
+/* Submit button */
+.btn-submit {
+    background: var(--color-primary);
+    color: #fff;
+    padding: var(--space-sm) var(--space-lg);
+    font-size: var(--font-md);
+    border: none;
+    border-radius: var(--radius-md);
+    transition: background 0.3s;
+    width: 200px;
+    height: 50px;
+}
+
+.btn-submit:hover {
+    background: var(--color-primary-hover);
+    color: #fff;
+}
+
+
+/* Homepage Featured Section */
+
+
+
+.homepage-featured .featured-hero {
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+    /* Aspect ratio 16:7 - wider than 16:9 but not as extreme as before */
+    aspect-ratio: 16 / 7;
+    width: 100%;
+    max-height: 600px;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+}
+
+/* Image container for better control */
+.homepage-featured .hero-img-container {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+}
+
+.homepage-featured .hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    transition: transform 0.5s ease;
+}
+
+.homepage-featured .featured-hero:hover .hero-img {
+    transform: scale(1.03);
+}
+
+.homepage-featured .overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+}
+
+.homepage-featured .hero-content {
+    max-width: 1320px;
+    margin: auto;
+
+    bottom: var(--space-md);
+    left: var(--space-md);
+    right: var(--space-md);
+}
+
+
+.homepage-featured .category {
+    font-size: 14px;
+}
+
+.homepage-featured .hero-title {
+    font-size: var(--font-xl);
+    margin: 10px 0 var(--space-xs);
+    color: #fff;
+}
+
+.homepage-featured .hero-desc {
+    font-size: var(--font-md);
+    margin-bottom: var(--space-sm);
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.homepage-featured .meta i {
+    margin-inline-end: var(--space-xxs);
+}
+
+/* Featured Hero */
+.featured-hero .object-fit-cover {
+    object-fit: cover;
+}
+
+.featured-hero img {
+    height: 100%;
+}
+
+
+.featured-hero .hero-desc {
+    font-size: var(--font-md);
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.homepage-featured .small-news-card .container-img {
+    flex: 0 0 120px;
+    width: 120px;
+    height: 100px;
+}
+
+.homepage-featured .small-news-card .card-img-top {
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+
+    object-fit: cover;
+}
+
+.small-news-card h6 a {
+    color: var(--text-primary);
+    font-size: var(--font-sm);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.small-news-card h6 a:hover {
+    color: var(--color-primary);
+}
+
+
+.small-news-card h6 a {
+    color: var(--text-primary);
+    font-size: var(--font-sm);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.small-news-card h6 a:hover {
+    color: var(--color-primary);
+}
+
+
+/* Main featured card */
+.featured-news {
+    height: 400px;
+}
+
+.featured-news img.hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.featured-news .overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+}
+
+.featured-news .hero-content {
+    bottom: var(--space-md);
+    left: var(--space-md);
+    right: var(--space-md);
+}
+
+
+.hero-title {
+    font-size: var(--font-xxl);
+    line-height: 150%;
+    margin: var(--space-sm) 0;
+}
+
+.hero-desc {
+    font-size: var(--font-md);
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.video-section {
+    margin: var(--container-padding-vertical) 0;
+
+    padding: 60px 0;
+}
+
+.translated-articles .small-news-card .card-img {
+    width: 100%;
+    height: auto;
+    border-radius: 0px 8px 8px 0px;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+}
+
+.situation-assessment-section .card,
+.translated-articles .card {
+    border: none;
+    background: #FFF;
+    box-shadow: none;
+    transition: box-shadow 0.3s ease;
+}
+
+.situation-assessment-section .featured-news-item img,
+.translated-articles .featured-news-item img {
+    border-radius: 16px;
+    overflow: hidden;
+    aspect-ratio: 4/3;
+}
+
+.quotes-section .main-card img {
+    height: auto;
+    aspect-ratio: 4/3;
+}
+
+.video-section {
+    background: #141146;
+}
+
+
+.nav-tabs {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: max-content;
+}
+
+.tab-item {
+    cursor: pointer;
+    padding: var(--space-xs) var(--space-md);
+    font-family: "Al-Jazeera-Bold";
+    color: #B2B2B2;
+
+
+    transition: background 0.3s;
+}
+
+.tab-item.active {
+    border-right: 2px solid #C4C2F0;
+    background: #CDE8FE;
+    color: #0F0D35;
+
+
+}
+
+.tab-pane {
+    display: none;
+}
+
+.tab-pane.active {
+    display: block;
+}
+
+.thumb {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: var(--radius-lg);
+}
+
+.play-icon-img {
+    max-width: 80px;
+}
+
+.thumb > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.play-icon {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.thumb video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.video-title {
+    font-size: var(--font-xl);
+    color: #fff;
+}
+
+.video-desc {
+    font-size: var(--font-md);
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.video-thumb {
+    height: auto;
+    aspect-ratio: 9 / 12;
+}
+
+
+.video-thumb .thumb,
+.video-thumb video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.video-section iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.video-main {
+    height: 450px;
+}
+.video-main a{
+    display: block;
+
+}
+    /* Analysis Section */
+/* .analysis-section {
+  padding: var(--space-xl) 0;
+  background: var(--color-surface);
+} */
+
+/* Large featured cards (top row) */
+.analysis-card-large {
+    overflow: hidden;
+    border-radius: var(--radius-lg);
+    position: relative;
+}
+
+.analysis-card-large > img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+}
+
+.analysis-card-large .badge-large {
+    position: absolute;
+    top: var(--space-sm);
+    margin-inline-start: var(--space-sm);
+    padding: 4px 8px;
+}
+
+.analysis-card-large .analysis-content {
+    padding: var(--space-md);
+}
+
+.analysis-card-large .card-title a {
+    font-size: var(--font-lg);
+    color: var(--text-primary);
+    text-decoration: none;
+}
+
+.analysis-card-large .card-title a:hover {
+    color: var(--color-primary);
+}
+
+.analysis-card-large .meta {
+    margin-top: var(--space-xs);
+}
+
+
+/* Small lists (columns of three) */
+/* .analysis-section .small-list {
+  background: #fff;
+  padding: var(--space-sm);
+  border-radius: var(--radius-md);
+} */
+
+
+.analysis-section .small-item {
+    display: flex;
+    align-items: start;
+}
+
+.analysis-section .small-title {
+    margin: var(--space-xs) 0;
+    font-size: var(--font-sm);
+
+}
+
+.analysis-section .small-item + .small-item {
+    margin-top: var(--space-sm);
+}
+
+.analysis-section .small-img {
+    width: 100%;
+    max-width: 140px;
+    height: 120px;
+
+    object-fit: cover;
+    border-radius: var(--radius-sm);
+    flex-shrink: 0;
+}
+
+
+.analysis-section .small-title a:hover {
+    color: var(--color-primary);
+}
+
+.analysis-section .small-item .meta {
+    margin-top: var(--space-xxs);
+    flex-wrap: wrap;
+}
+
+
+.situation-assessment-section .card-title {
+    font-size: var(--font-lg);
+}
+
+/* arrows only */
+.situation-carousel .owl-nav {
+
+    position: relative;
+    margin-top: 1rem;
+    text-align: left;
+}
+
+.situation-carousel .owl-nav button {
+    background: var(--color-accent) !important;
+    color: #fff !important;
+    border: none;
+    width: 24px;
+    height: 24px;
+    padding: 4px;
+    aspect-ratio: 1/1;
+    border-radius: 6px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.5rem;
+    transition: background 0.3s;
+}
+
+.situation-carousel .owl-nav button i {
+    font-size: 12px;
+
+}
+
+.situation-carousel .owl-nav button:hover {
+    background: var(--color-primary-hover);
+    color: #fff;
+}
+
+/* hide default text */
+.owl-prev .owl-prev-icon,
+.owl-next .owl-next-icon {
+    display: inline-block;
+
+}
+
+/*
+  1) outer grid: two equal-width columns
+     - left = .small-grid, right = .main-card
+*/
+.middle-east-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-md);
+    align-items: stretch;
+}
+
+/*
+  2) small-grid: 2×2 grid for the four mini-cards
+*/
+.small-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: var(--space-md);
+}
+
+.middle-east-grid .featured-news-item {
+    box-shadow: none;
+    background: transparent;
+}
+
+.middle-east-grid .featured-news-item > img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    aspect-ratio: 16 / 9;
+    border-radius: var(--radius-lg);
+}
+
+.small-grid .small-card .card-title {
+    font-size: var(--font-md);
+}
+
+.homepage-featured .hero-title a:hover {
+    color: #fff;
+}
+
+
+/* Author Detail Section */
+.author-detail-section {
+    padding: var(--space-xl) var(--container-padding-horizontal);
+    background: var(--color-surface);
+}
+
+/* Breadcrumb */
+.author-detail-section .breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    font-size: var(--font-sm);
+    color: var(--text-secondary);
+    margin-bottom: var(--space-lg);
+}
+
+.author-detail-section .breadcrumb a {
+    color: var(--color-primary);
+    font-family: "Al-Jazeera-Bold";
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.author-detail-section .breadcrumb a:hover {
+    color: var(--color-primary-hover);
+}
+
+.author-detail-section .breadcrumb span {
+    color: var(--text-primary);
+    font-family: "Al-Jazeera-Bold";
+}
+
+/* Author Info */
+.author-info .author-role {
+    /* English comment: role label styling */
+    display: inline-block;
+    color: var(--color-accent);
+    font-size: var(--font-lg);
+    font-family: "Al-Jazeera-Bold";
+    margin-bottom: var(--space-sm);
+}
+
+.author-info .author-name {
+    /* English comment: author name */
+    font-size: var(--font-xxl);
+    color: var(--text-primary);
+    line-height: 150%;
+    margin-bottom: var(--space-md);
+}
+
+.author-info .author-bio {
+    /* English comment: biography text */
+    font-size: var(--font-md);
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: var(--space-md);
+}
+
+/* Social Icons */
+.author-social a {
+    /* English comment: social icon link */
+    color: var(--color-primary-hover);
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.author-social a:hover {
+    color: var(--color-accent);
+}
+
+/* Author Photo */
+.author-photo-wrapper {
+    /* English comment: photo container centering */
+    display: flex;
+    justify-content: center;
+}
+
+.author-photo {
+    /* English comment: circular author image */
+    border-radius: 50%;
+    border: 4px solid var(--color-accent);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Search Form */
+.author-search input.form-control {
+    /* English comment: search input styling */
+    width: 300px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--color-border);
+    padding: var(--space-xs) var(--space-sm);
+    font-size: var(--font-sm);
+    height: 40px;
+    margin-left: -5px;
+}
+
+.author-search button.btn {
+    /* English comment: search button styling */
+    background: var(--color-primary);
+    color: #fff;
+    border: 1px solid var(--color-primary);
+    border-radius: var(--radius-sm);
+    padding: var(--space-xs) var(--space-lg);
+    font-size: var(--font-md);
+    height: 40px;
+
+}
+
+.author-search button.btn:hover {
+    background: var(--color-primary-hover);
+    border-color: var(--color-primary-hover);
+}
+
+
+/* Article Cards */
+.author-detail-section .card {
+    /* English comment: uniform card styling */
+    border: none;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.author-detail-section .card:hover {
+    transform: translateY(-4px);
+}
+
+.author-detail-section .card-img-top {
+    height: auto;
+    object-fit: cover;
+    aspect-ratio: 4 / 3;
+}
+
+.author-detail-section .card-body {
+    padding: var(--space-md);
+}
+
+
+.author-detail-section .card-title a {
+    /* English comment: article title link */
+    color: var(--text-primary);
+    font-size: var(--font-md);
+    text-decoration: none;
+}
+
+.author-detail-section .card-title a:hover {
+    color: var(--color-primary);
+}
+
+.author-detail-section .meta {
+    /* English comment: date and author meta */
+    font-size: var(--font-sm);
+    color: var(--text-secondary);
+    margin-top: var(--space-xs);
+}
+
+.author-detail-section .meta img {
+    vertical-align: middle;
+}
+
+/* =======================
+       Search Filters Row
+       ======================= */
+
+
+/* ===== Filter Bar ===== */
+.articles-filter {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    background: #EBF6FF;
+    padding: var(--space-md);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--space-lg);
+}
+
+.articles-filter .form-control,
+.articles-filter .btn {
+    height: calc(var(--space-lg) + var(--space-xs));
+    font-size: var(--font-sm);
+}
+
+.articles-filter .input-group-text {
+    background: #fff;
+    border: 1px solid var(--color-border);
+}
+
+.articles-filter .form-select {
+    background: #fff;
+    border: 1px solid var(--color-border);
+}
+
+.articles-filter .date-input {
+    position: relative;
+}
+
+.articles-filter .date-input i {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: var(--space-xs);
+    color: var(--text-secondary);
+}
+
+.articles-filter .date-input input {
+    padding-inline-start: 2.5em;
+}
+
+input[type="date"] {
+    direction: rtl; /* النص والـ placeholder يمين */
+    text-align: right; /* التاريخ لما يتكتب يظهر يمين */
+}
+
+/* الحاوية */
+.date-field {
+    position: relative;
+}
+
+/* اتجاه ومظهر الحقل */
+.date-field input[type="date"] {
+    direction: rtl;
+    text-align: right;
+    padding-right: 1rem; /* مسافة للنص */
+}
+
+/* مكان الأيقونة بتاعة Bootstrap input-group على اليمين */
+.date-field .input-group-text {
+    z-index: 2;
+}
+
+/* فوق الخلفية */
+
+.date-field .fake-placeholder {
+    position: absolute;
+    right: 3rem; /* عدّلها حسب عرض الأيقونة والمسافات */
+    top: 50%;
+    transform: translateY(-50%);
+    color: #9aa3af; /* رمادي هادي */
+    pointer-events: none; /* ما تستقبلش ضغطات */
+    white-space: nowrap;
+    font-size: 0.95rem;
+}
+
+/* لما الحقل ياخد فوكس أو يبقى فيه قيمة، اخفي الـ placeholder */
+.date-field:focus-within .fake-placeholder {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* لو عايزها تبقى سريعة وناعمة */
+.date-field .fake-placeholder {
+    transition: opacity .12s ease, visibility .12s ease;
+}
+
+/* (اختياري) لو هتكتفي بأيقونتك فقط وعايز تمنع أيقونة المتصفح */
+input[type="date"]::-webkit-calendar-picker-indicator {
+    opacity: 0;
+    display: none;
+}
+
+/* الموبايل فقط: أظهر الـ fake placeholder */
+@media (max-width: 991.98px) {
+    .date-field .fake-placeholder {
+        display: inline-block;
+    }
+}
+
+/* الديسكتوب: أخفِ الـ fake placeholder نهائيًا */
+@media (min-width: 992px) {
+    .date-field .fake-placeholder {
+        display: none !important;
+    }
+}
+
+.articles-filter .btn-apply {
+    background: var(--color-primary);
+    color: #fff;
+    border: none;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    opacity: 0;
+    display: none;
+}
+
+input[type="date"]::-ms-clear,
+input[type="date"]::-ms-expand {
+    display: none;
+}
+
+.articles-filter .btn-reset {
+    border: 1px solid var(--color-border);
+    color: var(--text-secondary);
+}
+
+
+.articles-filter .filter-control {
+    flex: 1 1 180px;
+    max-width: 290px;
+}
+
+.articles-filter .filter-control .input-group-text {
+    background: #fff;
+    border: 1px solid var(--color-border);
+    color: var(--text-secondary);
+}
+
+.articles-filter .filter-control .form-select,
+.articles-filter .filter-control .form-control {
+    border: 1px solid var(--color-border);
+}
+
+.articles-filter .btn-apply,
+.articles-filter .btn-reset {
+    height: calc(var(--space-lg) + var(--space-xs));
+    font-size: var(--font-sm);
+    padding: 0 var(--space-md);
+}
+
+.articles-filter .btn-apply {
+    background: var(--color-primary);
+    border: none;
+    color: #fff;
+}
+
+.articles-filter .btn-reset {
+    background: transparent;
+    border: 1px solid var(--color-primary);
+    color: var(--color-primary);
+}
+
+
+/* =======================
+       Results Grid
+       ======================= */
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--space-md);
+}
+
+.results-grid .card > img {
+    height: 220px;
+    object-fit: cover;
+}
+
+.main-articles .card-title {
+    font-size: var(--font-md);
+}
+
+
+.main-articles .card {
+    height: 100%;
+}
+
+.tags {
+    margin-top: 60px;
+}
+
+.container-img {
+    width: 100%;
+    height: 220px;
+}
+
+.translated-articles .container-img {
+    width: 220px;
+    flex: 0 0 220px;
+    height: auto;
+
+}
+
+.translated-articles .container-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Responsive */
+@media (max-width: 1023.98px) {
+    .middle-east-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .translated-articles .small-news-list {
+        margin-top: 40px;
+    }
+
+    .main-featured-news-home .featured-news-grid {
+        display: grid;
+        grid-template-columns:  1fr; /* عمودين: الكبير + عمود جانبي */
+        grid-template-rows: auto auto auto; /* 3 صفوف للعمود الجانبي */
+        grid-template-areas:
+      "card-area-1 card-area-2"
+      "card-area-1 card-area-3"
+      "card-area-1 card-area-4";
+        gap: var(--space-md) 0;
+        height: auto; /* إلغاء 550px على التابلت */
+        min-height: 0;
+    }
+
+    /* منع تمدد غير مرغوب فيه لأي عنصر داخل الشبكة */
+    .main-featured-news-home .featured-news-grid > * {
+        min-height: 0;
+    }
+
+    /* نسب أبعاد لطيفة (اختياري) لتحسين القصّ للصور */
+    .main-featured-news-home .featured-news-grid .card-area-1 {
+        aspect-ratio: 16 / 9;
+    }
+
+    .main-featured-news-home .featured-news-grid .card-area-2,
+    .main-featured-news-home .featured-news-grid .card-area-3,
+    .main-featured-news-home .featured-news-grid .card-area-4 {
+        aspect-ratio: 16 / 10;
+    }
+
+    .col-lg-4 .analysis-container {
+        margin-top: 40px;
+    }
+
+    .col-lg-4:first-child .analysis-container {
+        margin: 0;
+    }
+
+    .sidebar-widget .most-read-item {
+        flex-flow: column;
+    }
+
+    .sidebar-widget .most-read-item > a {
+        width: 100%;
+        height: 90px;
+        flex: 0 0 60px;
+
+    }
+
+    .sidebar-widget .most-read-item .category {
+        display: none;
+    }
+
+    .sidebar-widget .widget-title {
+        font-size: 20px;
+    }
+
+    .sidebar-widget .newsletter-widget {
+        padding: 10px;
+    }
+
+    .objectives-img.main {
+        width: 200px;
+        height: 200px;
+        top: 0;
+        right: 0;
+    }
+
+    .objectives-img-group {
+        margin-top: 40px;
+    }
+
+    .objectives-img.small1 {
+        width: 80px;
+        height: 80px;
+        top: 15%;
+        right: 160px;
+    }
+
+    .objectives-img.small2 {
+        width: 60px;
+        height: 60px;
+        bottom: 0;
+        right: 120px;
+    }
+
+
+    /* Ensure navbar toggler stays at the edge */
+    .hodhod-header .navbar-toggler {
+        font-size: 1.5rem;
+        border: none;
+        background: transparent;
+        padding: 0.25rem;
+        position: relative;
+        z-index: 1200;
+        color: white;
+
+
+    }
+
+    /* Position menu under toggle properly */
+    .hodhod-header #mainNav {
+        position: absolute;
+        top: 100%;
+        right: var(--space-sm);
+        left: var(--space-sm);
+        z-index: 10;
+        background-color: white;
+        padding: var(--space-sm);
+        border-radius: var(--radius-md);
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+        margin-top: var(--space-xs);
+        z-index: 1000;
+        gap: 0 !important;
+    }
+
+    /* Force column layout */
+    .hodhod-header #mainNav .nav-item {
+        width: 100%;
+    }
+
+    .hodhod-header #mainNav .nav-link {
+        display: block;
+        width: 100%;
+        text-align: start;
+        padding: 0.75rem 1rem;
+        font-size: var(--font-md);
+        color: var(--text-primary);
+        border-bottom: 1px solid var(--color-border);
+        background-color: transparent;
+        transition: background 0.3s ease;
+        height: unset;
+        border: none;
+    }
+
+    .hodhod-header #mainNav .nav-link:hover {
+        background-color: var(--color-surface);
+        color: var(--color-primary);
+    }
+
+    .hodhod-header #mainNav .nav-item:last-child .nav-link {
+        border-bottom: none;
+    }
+
+    .buttons-group {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .hodhod-header .buttons-group .btn-header {
+        display: flex;
+        width: 32px;
+        height: 32px;
+        padding: 10px 8px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        border-radius: 8px;
+        border: 1px solid var(--color-primary);
+        background: #CDE8FE;
+        color: var(--color-primary);
+
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .hodhod-header .navbar-toggler:hover {
+        background-color: var(--color-primary);
+        color: white;
+    }
+
+    /* Make sure it’s aligned inside container */
+    .hodhod-header .topbar {
+        position: relative;
+    }
+
+}
+
+
+
+.sidebar .author-intro {
+    --author-bg: #fff;
+    --author-ring: var(--color-primary, #5d3ebc);
+    --author-text: var(--bs-body-color, #222);
+    --author-muted: #6c757d;
+
+    position: relative;
+    padding: 18px 16px;
+    border-bottom: 1px solid rgba(93, 62, 188, .15);
+    overflow: hidden;
+}
+
+
+.sidebar .author-intro .author-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-inline: auto;
+    position: relative;
+    box-shadow: 0 0 0 4px var(--author-bg),
+    0 0 0 6px var(--author-ring),
+    0 10px 20px rgba(0, 0, 0, .10);
+    overflow: hidden;
+}
+
+.sidebar .author-intro .author-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.sidebar .author-intro .author-name {
+    font-size: 1.1rem;
+    line-height: 1.3;
+    color: var(--author-text);
+    margin: 0.85rem 0 0.25rem;
+}
+
+.sidebar .author-intro .author-link {
+    color: inherit;
+    text-decoration: none;
+    transition: color .2s ease, text-shadow .2s ease;
+}
+
+.sidebar .author-intro .author-link:hover {
+    color: var(--author-ring);
+    text-shadow: 0 0 0 rgba(0, 0, 0, 0);
+}
+
+.sidebar .author-intro .author-role {
+    display: inline-block;
+    font-size: .825rem;
+    color: var(--author-ring);
+    background: rgba(93, 62, 188, .08);
+    padding: .25rem .6rem;
+    border: 1px solid rgba(93, 62, 188, .18);
+    border-radius: 999px;
+}
+
+.sidebar .author-intro .btn-author {
+    --btn-bg: var(--author-ring);
+    --btn-fg: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: .4rem;
+    padding: .5rem .85rem;
+    border-radius: 10px;
+    background: var(--btn-bg);
+    color: var(--btn-fg);
+    border: 0;
+    font-size: .9rem;
+    box-shadow: 0 6px 16px rgba(93, 62, 188, .25);
+    text-decoration: none;
+    transition: transform .15s ease, box-shadow .15s ease, opacity .15s ease;
+}
+
+.sidebar .author-intro .btn-author:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rgba(93, 62, 188, .30);
+}
+
+@media (max-width: 991.98px) {
+    .sidebar .author-intro {
+        padding: 16px 14px;
+    }
+
+    .sidebar .author-intro .author-avatar {
+        width: 108px;
+        height: 108px;
+    }
+}
+
+.analysis-container .main-card img {
+    aspect-ratio: 4/3;
+}
+
+.video-section .section-title {
+    color: #fff
+}
+
+.video-section .section-title::after {
+    background-color: #fff;
+}
+
+.video-section .section-title::before {
+    background-color: #fff;
+}
+
+.video-section .header-divider {
+    border-color: #fff;
+}
+
+.video-section .btn-view-all {
+    background-color: #fff;
+    border-color: #fff;
+    color: var(--color-primary);
+}
+
+.video-section .btn-view-all:hover {
+    background-color: var(--color-primary);
+    border-color: #fff;
+    color: #fff;
+}
+
+/* خلّي الأيقونة قابلة للتحويل */
+.hodhod-header #mainNav .dropdown-toggle .dropdown-arrow {
+    display: inline-block; /* مهم عشان الـ transform يشتغل */
+    transition: transform .2s ease;
+    transform: rotate(0deg);
+}
+
+/* لما القائمة مفتوحة */
+.hodhod-header #mainNav .dropdown.open > .dropdown-toggle .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .featured-news-item-large {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+
+    .article-meta .share-menu {
+        background: #fff;
+    }
+
+    .related-card .card-content {
+        padding: 10px;
+    }
+
+    .pagination-container {
+        margin: 0;
+        align-items: center;
+        justify-content: center;
+
+        gap: 20px;
+    }
+
+    .footer-social-list {
+        grid-template-columns: 1fr;
+    }
+
+    .main-articles .card {
+        margin-bottom: 20px;
+    }
+
+    .mission-hero .title-section {
+        font-size: var(--font-xl);
+    }
+
+    .mission-hero p {
+        font-size: var(--font-sm);
+    }
+
+    .platform-intro .row {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .platform-text {
+        margin-bottom: 40px;
+    }
+
+    .platform-img {
+        margin-bottom: var(--space-md);
+    }
+
+    .about-hero .container-fluid > .d-flex {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-hero .about-image {
+        width: 100%;
+    }
+
+    .search-bar {
+        display: none;
+    }
+
+
+    .search-bar .justify-content-between {
+        justify-content: center !important;
+    }
+
+    .homepage-featured .col-md-3 .small-news-card {
+        margin-bottom: 20px;
+        height: 100px !important;
+    }
+
+    .homepage-featured .col-md-3:last-child .small-news-card {
+        margin-bottom: 0;
+    }
+
+    .translated-articles .small-news-list {
+        margin-top: 40px;
+    }
+
+    .translated-articles .small-news-card .container-img {
+        flex: 0 0 110px;
+        width: 110px;
+        height: auto;
+    }
+
+    .translated-articles .small-news-card .container-img img {
+        aspect-ratio: 4 / 3;
+    }
+
+    .nav-tabs {
+        width: 100%;
+    }
+
+    .video-main {
+        height: 250px;
+    }
+
+    .video-main img{
+        width: 100%;
+    height: 100%;
+    object-fit: cover;
+         }
+    .article-featured-img img
+    {
+        height: 300px;
+    }
+
+
+
+
+    .section-title {
+        font-size: var(--font-lg);
+    }
+
+    .col-lg-4:first-child .analysis-container {
+        margin: 0;
+    }
+
+    .col-md-4 .analysis-container {
+        margin-top: 40px;
+    }
+
+    .analysis-section .small-img {
+        width: 100%;
+        max-width: 80px;
+        height: 80px;
+    }
+
+    .analysis-section .small-title {
+        margin: 0;
+        font-size: 14px;
+    }
+
+    .analysis-section .small-item .meta {
+        display: none !important;
+    }
+
+    .analysis-section .small-item .category {
+        display: none;
+    }
+
+    .main-featured-news,
+    .situation-assessment-section {
+        padding-top: 0;
+    }
+
+    .middle-east-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .small-grid {
+        grid-template-columns: 1fr;
+
+    }
+
+    .main-featured-news-home .featured-news-grid {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+      "card-area-1"
+      "card-area-2"
+      "card-area-3"
+      "card-area-4";
+        height: auto;
+    }
+
+    .hodhod-header .logo img {
+        height: 70px;
+    }
+
+    .author-search input.form-control {
+        width: 100%;
+    }
+
+    .author-detail-section {
+        padding: var(--space-lg) 0;
+    }
+
+    .articles-filter .filter-control {
+        width: 100%;
+        max-width: 100%;
+        flex: unset;
+    }
+
+    .card-title {
+        font-size: var(--font-md);
+        margin: var(--space-xs) 0;
+    }
+
+    .tags {
+        margin-bottom: 40px;
+    }
+
+    .related-card .card-img {
+        width: 140px;
+        height: 140px;
+    }
+
+    .related-card .category {
+        display: none;
+    }
+
+    .related-card .card-title {
+        font-size: 14px;
+        line-height: 1.4;
+        margin-bottom: 8px;
+    }
+
+    .related-card .card-title a {
+        font-size: inherit;
+    }
+
+    .main-featured-news-articles .featured-news-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: none;
+    }
+
+    .main-featured-news-articles .featured-news-item-large,
+    .main-featured-news-articles .featured-news-item-small {
+        grid-column: auto !important;
+        grid-row: auto !important;
+        height: 300px;
+    }
+
+    .about-hero .d-flex {
+        flex-direction: column;
+    }
+
+    .nav-item.dropdown .dropdown-menu {
+        position: unset;
+        border: none;
+        box-shadow: none;
+        margin-right: 20px;
+    }
+
+    .nav-item.dropdown .dropdown-menu .dropdown-item {
+        background: transparent;
+    }
+
+    .nav-item.dropdown .dropdown-menu .dropdown-item:last-child {
+        border-bottom: none;
+    }
+    .homepage-featured .featured-hero{
+        aspect-ratio: 16 / 9;
+        max-height: 350px;
+        border-radius: 12px;
+    }
+    .homepage-featured .featured-hero-wrapper {
+        padding: 0 10px;
+    }
+    .sidebar-widget .most-read-item > a{
+        height: 160px;
+    }
+}
+.article-body p ,.article-body span{
+    font-family: "Al-Jazeera-Regular", sans-serif !important;
+}

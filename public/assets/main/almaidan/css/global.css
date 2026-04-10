@@ -1,0 +1,255 @@
+:root {
+  /* Brand Colors */
+  --color-primary: #f89c0c;
+  /* Primary brand color */
+  --color-primary-hover: #d17e00;
+  /* Darker shade for hover states */
+  --color-accent: #ffe7c7;
+  /* Soft accent color compatible with primary */
+  --color-bg: #fff;
+  --color-overlay: rgba(0, 0, 0, 0.5);
+  /* Neutrals */
+  --color-surface: #f5f5f5;
+  /* Light background surface */
+  --color-content-bg: #ffffff;
+  /* Main content area background */
+  --color-border: #e0e0e0;
+  /* Subtle border lines */
+  --color-dark: #1c1c1e;
+  /* Dark tone for high-contrast elements */
+  --color-muted: #8e8e93;
+  /* Muted text and icons */
+
+  /* States */
+  --color-success: #2e7d32;
+  /* Success messages and icons */
+  --color-danger: #e53935;
+  /* Error and danger states */
+
+  /* Typography */
+  --text-primary: #1c1c1e;
+  /* Main body text */
+  --text-secondary: var(--color-muted);
+  /* Secondary text */
+
+  /* Spacing scale */
+  --space-xxs: 4px;
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 24px;
+  --space-lg: 32px;
+  --space-xl: 64px;
+
+  /* Fluid spacing: pick the smaller value between fixed px and % of viewport */
+
+  /* Fluid small gap: min(16px, 4%) */
+  --space-fluid-sm: min(var(--space-sm), 4%);
+  /* Fluid medium gap: min(24px, 6%) */
+  --space-fluid-md: min(var(--space-md), 6%);
+  /* Fluid large gap: min(32px, 8%) */
+  --space-fluid-lg: min(var(--space-lg), 8%);
+
+  /* Fluid container padding: min(5em, 8% of width) */
+  --container-padding-horizontal: min(2em, 8%);
+  /* مثال على padding عمودي أقل */
+  --container-padding-vertical: min(2em, 5%);
+
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-xl: 32px;
+
+  /* Fluid Font Sizes using clamp(min, preferred, max) */
+  --font-xs: clamp(0.75rem, calc(0.75rem + 0.5vw), 0.875rem);
+  --font-sm: clamp(0.875rem, calc(0.875rem + 0.75vw), 1rem);
+  --font-md: clamp(1rem, calc(1rem + 1vw), 1.25rem);
+  --font-lg: clamp(1.25rem, calc(1.25rem + 1.5vw), 1.5rem);
+  --font-xl: clamp(1.5rem, calc(1.5rem + 2vw), 2rem);
+  --font-xxl: clamp(2rem, calc(2rem + 3vw), 3rem);
+  --font-display: clamp(3rem, calc(3rem + 4vw), 5rem);
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Fonts */
+@font-face {
+  font-family: "IBMPlexSansArabic-Light";
+  src: url(../fonts/IBMPlexSansArabic-Light.ttf);
+}
+
+@font-face {
+  font-family: "IBMPlexSansArabic-extraLight";
+  src: url(../fonts/IBMPlexSansArabic-ExtraLight.ttf);
+}
+
+@font-face {
+  font-family: "IBMPlexSansArabic-Medium";
+  src: url(../fonts/IBMPlexSansArabic-Medium.ttf);
+}
+
+@font-face {
+  font-family: "IBMPlexSansArabic-Regular";
+  src: url(../fonts/IBMPlexSansArabic-Regular.ttf);
+}
+
+@font-face {
+  font-family: "IBMPlexSansArabic-Bold";
+  src: url(../fonts/IBMPlexSansArabic-Bold.ttf);
+}
+
+@font-face {
+  font-family: "IBMPlexSansArabic-SemiBold";
+  src: url(../fonts/IBMPlexSansArabic-SemiBold.ttf);
+}
+
+@font-face {
+  font-family: "Al-Jazeera-Regular";
+  src: url(../fonts/Al-Jazeera-Arabic-Regular.ttf);
+}
+
+@font-face {
+  font-family: "Al-Jazeera-Bold";
+  src: url(../fonts/Al-Jazeera-Arabic-Bold.ttf);
+}
+
+@font-face {
+  font-family: "greta";
+  src: url(../fonts/greta.ttf);
+}
+
+/* Base Styles */
+body {
+  font-family: "greta", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: var(--font-md);
+  color: var(--text-primary);
+  direction: rtl;
+
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Al-Jazeera-Bold";
+  margin: 0;
+  line-height: 140%;
+}
+
+h1 {
+  font-size: var(--font-display);
+}
+
+h2 {
+  font-size: var(--font-xxl);
+}
+
+h3 {
+  font-size: var(--font-xl);
+}
+
+h4 {
+  font-size: var(--font-lg);
+}
+
+h5 {
+  font-size: var(--font-md);
+}
+
+h6 {
+  font-size: var(--font-sm);
+}
+
+p {
+  font-size: var(--font-md);
+  margin-bottom: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--color-primary);
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  padding: var(--space-xs) var(--space-md);
+  font-size: var(--font-sm);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: #fff;
+  border: 1px solid var(--color-primary);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-hover);
+  border-color: var(--color-primary-hover);
+}
+
+.btn-secondary {
+  background-color: var(--color-accent);
+  color: var(--color-dark);
+  border: 1px solid var(--color-accent);
+}
+
+.btn-secondary:hover {
+  background-color: #b0def0;
+}
+
+/* Utilities */
+.text-muted {
+  color: var(--text-secondary) !important;
+}
+
+.rounded {
+  border-radius: var(--radius-md) !important;
+}
+
+.section {
+  padding: var(--space-xl) 0;
+}
+
+input::placeholder {
+  text-align: right;
+  font-size: var(--font-sm);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.6);
+  color: var(--text-primary);
+}
+
+.bg-primary {
+  background: var(--color-primary) !important;
+}

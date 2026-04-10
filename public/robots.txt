@@ -1,0 +1,35 @@
+User-agent: *
+Allow: /
+Disallow: /dashboard
+Disallow: /dashboard/*
+Disallow: /admin
+Disallow: /admin/*
+Disallow: /login
+Disallow: /register
+Disallow: /forgot-password
+Disallow: /preview
+Disallow: /preview/*
+Disallow: /api
+Disallow: /api/*
+Disallow: /livewire/
+Disallow: /_ignition/
+Disallow: /storage/framework/
+Disallow: /*?*
+
+User-agent: Googlebot-News
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Yandex
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+Sitemap: https://ppost.emdatra.org/sitemap.xml
+Sitemap: https://ppost.emdatra.org/sitemap-news.xml

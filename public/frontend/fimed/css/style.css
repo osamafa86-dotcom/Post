@@ -1,0 +1,17 @@
+/* ==========================================================================
+   📰 FIMED - MAIN STYLES
+   المؤسسة الفلسطينية للإعلام
+   ========================================================================== */
+
+/* Cairo Font - Primary Arabic Font */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&display=swap');
+
+/* Turkish Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+/* Import CSS Modules */
+@import 'tokens.css';
+@import 'base.css';
+@import 'layout.css';
+@import 'components.css';
+@import 'utilities.css';

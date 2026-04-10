@@ -1,0 +1,276 @@
+/*=============================================
+=            Theme Color Definitions (Zentra) =
+=============================================*/
+
+/* Light Theme (default) */
+:root {
+    /* Core */
+    --bs-body-bg: #ffffff; /* Main background */
+    --bs-body-color: #2e4a79; /* Main text */
+    --bs-border: #dee2e6;
+
+    /* Sidebar */
+    --bs-sidebar-bg: #f4f5f7;
+    --bs-sidebar-color: #2e4a79;
+
+    /* Cards / Panels */
+    --bs-card-bg: #ffffff;
+
+    /* Text */
+    --bs-text-muted: #94a3b8;
+
+    /* Primary / Accent */
+    --bs-primary: #673d98; /* Main brand color */
+    --bs-primary-hover: #5a337f; /* Darker hover */
+
+    /* Secondary (btn-secondary) */
+    --bs-secondary: #94c8a9; /* Support color */
+    --bs-secondary-hover: #7fb593;
+
+    /* Warning (btn-warning) */
+    --bs-warning-bg: #62c191;
+    --bs-warning-hover: #4da87a;
+}
+
+/* Dark Theme */
+[data-bs-theme="dark"] {
+    /* Core */
+    --bs-body-bg: #0f172a;
+    --bs-body-color: #f1f5f9;
+    --bs-border: #334155;
+
+    /* Sidebar */
+    --bs-sidebar-bg: #111827;
+    --bs-sidebar-color: #94a3b8;
+
+    /* Cards / Panels */
+    --bs-card-bg: #1e293b;
+
+    /* Text */
+    --bs-text-muted: #94a3b8;
+
+    /* Primary / Accent */
+    --bs-primary: #673d98;
+    --bs-primary-hover: #5a337f;
+
+    /* Secondary (btn-secondary) */
+    --bs-secondary: #94c8a9;
+    --bs-secondary-hover: #7fb593;
+
+    /* Warning (btn-warning) */
+    --bs-warning-bg: #62c191;
+    --bs-warning-hover: #4da87a;
+}
+
+
+/* IBM Plex Sans Arabic — single TTF file available (Regular)
+   NOTE FOR ENGINEERS:
+   - We only have the Regular TTF. To keep CSS APIs consistent across the app,
+     we declare multiple @font-face blocks for common weights (300–800) and point
+     them all to the same file.
+   - Browsers will synthesize bold for heavier weights (visual result ≠ true bold).
+   - For best rendering, add the actual weight files later (Medium 500, SemiBold 600, Bold 700, etc.)
+*/
+
+@font-face {
+    font-family: "IBMPlexSansArabic-Light";
+    src: url("../../fonts/zentra/IBMPlexSansArabic-Light.ttf") format("truetype");
+    font-weight: 300;            /* Light (synthesized) */
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "IBMPlexSansArabic";
+    src: url("../../fonts/zentra/IBMPlexSansArabic-Regular.ttf") format("truetype");
+    font-weight: 400;            /* Regular */
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "IBMPlexSansArabic-Medium";
+    src: url("../../fonts/zentra/IBMPlexSansArabic-Medium.ttf") format("truetype");
+    font-weight: 500;            /* Medium (synthesized) */
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "IBMPlexSansArabic-SemiBold";
+    src: url("../../fonts/zentra/IBMPlexSansArabic-SemiBold.ttf") format("truetype");
+    font-weight: 600;            /* SemiBold (synthesized) */
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "IBMPlexSansArabic-Bold";
+    src: url("../../fonts/zentra/IBMPlexSansArabic-Bold.ttf") format("truetype");
+    font-weight: 700;            /* Bold (synthesized) */
+    font-style: normal;
+    font-display: swap;
+}
+
+
+/* Optional: encourage browsers to synthesize weight when missing.
+   Keep disabled if you later add real weight files. */
+html, body {
+    font-family: "IBMPlexSansArabic", sans-serif !important;
+    /* font-synthesis: weight;  */ /* enable if you want aggressive faux-bold */
+}
+
+.section-title {
+    font-family: "IBMPlexSansArabic-Bold";
+    font-weight: 700;
+}
+
+.btn,
+.fw-bold,
+.app-sidebar-menu .menu > .menu-item > .menu-link > .menu-title {
+    font-family: "IBMPlexSansArabic-SemiBold";
+
+}
+
+
+.btn-login {
+    background-color: var(--bs-primary) !important;
+}
+
+.btn-login:hover {
+    background-color: var(--bs-primary-hover) !important;
+}
+
+[data-kt-app-layout="dark-sidebar"] .app-sidebar {
+    background-color: hsl(271 43% 20% / 1) !important;
+}
+
+[data-kt-app-layout="dark-sidebar"] .app-sidebar .menu .menu-item .menu-link .menu-title,
+[data-bs-theme="dark"] .section-title, [data-kt-app-layout="dark-sidebar"] .app-sidebar .menu .menu-item .menu-link .menu-icon, [data-kt-app-layout="dark-sidebar"] .app-sidebar .menu .menu-item .menu-link .menu-icon .svg-icon, [data-kt-app-layout="dark-sidebar"] .app-sidebar .menu .menu-item .menu-link .menu-icon i {
+    color: var(--bs-card-bg);
+}
+
+[data-kt-app-layout="dark-sidebar"] .app-sidebar .menu .menu-item .menu-link .menu-arrow::after {
+    /* Ensure the pseudo-element is visible (theme may already set this) */
+    content: "";
+    display: inline-block;
+    width: 12px; /* adjust if your design uses a different size */
+    height: 12px;
+
+    /* Arrow color (mask uses alpha channel; color comes from background-color) */
+    background-color: #ffffff;
+
+    /* Mask (WebKit + standard) */
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 6 6%22%3E%3Cpath fill=%22%23000%22 d=%22M2.72011 2.76429L4.46358 1.02083C4.63618 0.848244 4.63617 0.568419 4.46358 0.395831C4.29099 0.223244 4.01118 0.223244 3.83861 0.395831L1.52904 2.70537C1.36629 2.86808 1.36629 3.13191 1.52904 3.29462L3.83861 5.60419C4.01117 5.77675 4.29099 5.77675 4.46358 5.60419C4.63617 5.43156 4.63617 5.15175 4.46358 4.97919L2.72011 3.23571C2.58994 3.10554 2.58994 2.89446 2.72011 2.76429Z%22/%3E%3C/svg%3E");
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 6 6%22%3E%3Cpath fill=%22%23000%22 d=%22M2.72011 2.76429L4.46358 1.02083C4.63618 0.848244 4.63617 0.568419 4.46358 0.395831C4.29099 0.223244 4.01118 0.223244 3.83861 0.395831L1.52904 2.70537C1.36629 2.86808 1.36629 3.13191 1.52904 3.29462L3.83861 5.60419C4.01117 5.77675 4.29099 5.77675 4.46358 5.60419C4.63617 5.43156 4.63617 5.15175 4.46358 4.97919L2.72011 3.23571C2.58994 3.10554 2.58994 2.89446 2.72011 2.76429Z%22/%3E%3C/svg%3E");
+
+    /* Positioning and scaling */
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+}
+
+[data-kt-app-layout="dark-sidebar"] .app-sidebar .menu .menu-item .menu-link.active {
+    background-color: var(--bs-primary) !important;
+}
+
+.btn-post {
+    background-color: var(--bs-primary);
+
+}
+
+.btn-post:hover {
+    background-color: var(--bs-primary-hover);
+
+}
+
+.btn-edit {
+    background-color: var(--bs-warning-bg);
+
+}
+
+.btn-edit:hover {
+    background-color: var(--bs-warning-hover);
+
+}
+
+.usage-badge {
+    background-color: var(--bs-warning-bg) !important;
+}
+
+.custom-text.text-warning {
+    color: var(--bs-warning-bg) !important;
+}
+
+.text-primary {
+    color: var(--bs-sidebar-color) !important;
+}
+
+.btn.btn-dark {
+    background-color: var(--bs-warning-bg);
+
+}
+
+body, .app-default {
+    background-color: var(--bs-sidebar-bg);
+}
+
+.filter-btn {
+
+    background-color: var(--bs-warning-bg) !important;
+}
+
+.btn-check:checked + .btn.btn-primary, .btn-check:active + .btn.btn-primary, .btn.btn-primary:focus:not(.btn-active), .btn.btn-primary:hover:not(.btn-active), .btn.btn-primary:active:not(.btn-active), .btn.btn-primary.active, .btn.btn-primary.show, .show > .btn.btn-primary {
+    background-color: var(--bs-warning-hover) !important;
+}
+
+
+[data-bs-theme="light"] .dropdown .btn-secondary {
+    background-color: var(--bs-warning-bg) !important;
+
+}
+
+[data-bs-theme="light"] .dropdown .btn-secondary:hover {
+    background-color: var(--bs-warning-hover) !important;
+    color: #fff;
+
+}
+
+[data-bs-theme="light"] .dropdown .btn-secondary:hover:after{
+color: #fff  !important  ;
+
+}
+
+.page-link.active, .active > .page-link {
+    background-color: var(--bs-warning-bg) !important;
+
+}
+.menu-state-color .menu-item.hover:not(.here) > .menu-link:not(.disabled):not(.active):not(.here), .menu-state-color .menu-item:not(.here) .menu-link:hover:not(.disabled):not(.active):not(.here),
+.btn-check:checked + .btn.btn-active-color-primary i, .btn-check:checked + .btn.btn-active-color-primary .svg-icon, .btn-check:active + .btn.btn-active-color-primary i, .btn-check:active + .btn.btn-active-color-primary .svg-icon, .btn.btn-active-color-primary:focus:not(.btn-active) i, .btn.btn-active-color-primary:focus:not(.btn-active) .svg-icon, .btn.btn-active-color-primary:hover:not(.btn-active) i, .btn.btn-active-color-primary:hover:not(.btn-active) .svg-icon, .btn.btn-active-color-primary:active:not(.btn-active) i, .btn.btn-active-color-primary:active:not(.btn-active) .svg-icon, .btn.btn-active-color-primary.active i, .btn.btn-active-color-primary.active .svg-icon, .btn.btn-active-color-primary.show i, .btn.btn-active-color-primary.show .svg-icon, .show > .btn.btn-active-color-primary i, .show > .btn.btn-active-color-primary .svg-icon,
+.btn-check:checked + .btn.btn-active-color-primary, .btn-check:active + .btn.btn-active-color-primary, .btn.btn-active-color-primary:focus:not(.btn-active), .btn.btn-active-color-primary:hover:not(.btn-active), .btn.btn-active-color-primary:active:not(.btn-active), .btn.btn-active-color-primary.active, .btn.btn-active-color-primary.show, .show > .btn.btn-active-color-primary,
+.menu-state-color .menu-item .menu-link.active .menu-icon, .menu-state-color .menu-item .menu-link.active .menu-icon .svg-icon, .menu-state-color .menu-item .menu-link.active .menu-icon i,
+.menu-state-color .menu-item .menu-link.active .menu-title {
+    color: var(--bs-warning-bg) !important;
+}
+[data-kt-app-layout="dark-sidebar"] .app-sidebar .menu .menu-item .menu-link .menu-title, [data-bs-theme="dark"] .section-title, [data-kt-app-layout="dark-sidebar"] .app-sidebar .menu .menu-item .menu-link .menu-icon, [data-kt-app-layout="dark-sidebar"] .app-sidebar .menu .menu-item .menu-link .menu-icon .svg-icon, [data-kt-app-layout="dark-sidebar"] .app-sidebar .menu .menu-item .menu-link .menu-icon i {
+    color: #ffffff;
+}
+[data-bs-theme="dark"] body, [data-bs-theme="dark"] .app-default {
+    background-color: hsl(271 43% 15% / 1) !important;
+}
+
+[data-bs-theme="dark"] .app-header,
+[data-bs-theme="dark"] .tags-section,
+[data-bs-theme="dark"] .card,
+[data-bs-theme="dark"] .toolbar-container {
+    background: hsl(271 43% 20% / 1) !important;
+    border: 1px solid hsl(271 43% 25% / 1) !important;
+}
+
+[data-bs-theme="dark"] .btn-settings:hover, [data-bs-theme="dark"] .btn-settings, [data-bs-theme="dark"] .btn.btn-dark, [data-bs-theme="dark"] .btn.btn-secondary{
+    background: hsl(271 43% 18% / 1) !important;
+    border: 1px solid hsl(271 43% 25% / 1) !important;
+}
