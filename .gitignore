@@ -1,0 +1,80 @@
+# ============================================================
+# Laravel .gitignore — ppost.emdatra.org
+# ============================================================
+
+# Dependencies
+/vendor/
+/node_modules/
+/public/build/
+/public/hot
+/public/storage
+/storage/*.key
+/storage/pail
+
+# Environment files (NEVER commit secrets)
+.env
+.env.backup
+.env.production
+.env.local
+.env.*.local
+
+# Laravel runtime
+/storage/app/public/*
+!/storage/app/public/.gitkeep
+/storage/framework/cache/*
+!/storage/framework/cache/.gitkeep
+/storage/framework/sessions/*
+!/storage/framework/sessions/.gitkeep
+/storage/framework/views/*
+!/storage/framework/views/.gitkeep
+/storage/framework/testing/*
+!/storage/framework/testing/.gitkeep
+/storage/logs/*
+!/storage/logs/.gitkeep
+/bootstrap/cache/*
+!/bootstrap/cache/.gitkeep
+
+# StaticPageRenderer cache (custom)
+/storage/framework/cache/pages/*
+
+# IDE / Editor
+.idea/
+.vscode/
+.fleet/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+.phpunit.result.cache
+.phpunit.cache/
+
+# Composer
+composer.phar
+auth.json
+
+# NPM / Yarn
+npm-debug.log
+yarn-error.log
+yarn.lock
+package-lock.json
+
+# Backups created by maintenance scripts
+*.bak
+*.backup
+*-backup-*
+env-backup-*
+
+# OS junk
+desktop.ini
+.Spotlight-V100
+.Trashes
+
+# cPanel local artifacts
+.htaccess.bak
+error_log
+
+# Homestead / Vagrant
+Homestead.json
+Homestead.yaml
+.vagrant/
