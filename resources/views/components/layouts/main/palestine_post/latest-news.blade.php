@@ -41,7 +41,7 @@
             }
         }
 
-        if (empty($latestNews)) {
+        if ($latestNews === null || (is_countable($latestNews) && count($latestNews) === 0)) {
             $latestNews = [
                 [
                     'title'    => 'مجلس الأمن يعقد جلسة طارئة لبحث تطوّرات الأوضاع الإنسانية في غزة',

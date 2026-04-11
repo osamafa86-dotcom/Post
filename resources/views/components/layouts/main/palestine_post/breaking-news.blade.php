@@ -44,7 +44,7 @@
             }
         }
 
-        if (empty($breakingNews)) {
+        if ($breakingNews === null || (is_countable($breakingNews) && count($breakingNews) === 0)) {
             $breakingNews = [
                 'مجلس الأمن يعقد جلسة طارئة لبحث تطوّرات الأوضاع الإنسانية في غزة',
                 'البنك الدولي يُقرّ منحة طارئة بقيمة 200 مليون دولار للأراضي الفلسطينية',
