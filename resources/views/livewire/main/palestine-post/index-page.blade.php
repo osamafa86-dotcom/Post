@@ -112,6 +112,7 @@
 
         </div>
     </section>
+    @include("components.layouts.main.palestine_post.latest-news")
     <div class="container mt-3">
         <div class="row">
             <div class="col-md-9">
