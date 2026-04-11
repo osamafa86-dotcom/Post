@@ -171,71 +171,55 @@
 @if($ppostLatestItems->isNotEmpty())
 <section class="ppost-latest" dir="rtl" aria-labelledby="ppost-latest-title">
     <div class="ppost-latest__container">
-        <div class="ppost-latest__header">
-            <h2 id="ppost-latest-title" class="ppost-latest__title">
-                <span class="ppost-latest__title-bar"></span>
-                آخر الأخبار
-            </h2>
-            <a href="#" class="ppost-latest__more">عرض الكل
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
-            </a>
-        </div>
-
         <div class="ppost-latest__grid">
-            {{-- الخبر المميّز (الأكبر) --}}
+
+            {{-- الشريط الجانبي (يظهر على اليمين في RTL) --}}
+            <aside class="ppost-latest__sidebar">
+                <h2 id="ppost-latest-title" class="ppost-latest__sidebar-heading">
+                    <span class="ppost-latest__sidebar-dot"></span>
+                    آخر الأخبار
+                </h2>
+                <ol class="ppost-latest__sidebar-list">
+                    @foreach($ppostRest as $index => $item)
+                        <li class="ppost-latest__sidebar-item">
+                            <span class="ppost-latest__sidebar-num">{{ sprintf('%02d', $index + 1) }}</span>
+                            <div class="ppost-latest__sidebar-content">
+                                <a href="{{ $item['url'] }}" class="ppost-latest__sidebar-link">{{ $item['title'] }}</a>
+                                <span class="ppost-latest__sidebar-date">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                                    {{ $item['date'] }}
+                                </span>
+                            </div>
+                        </li>
+                    @endforeach
+                </ol>
+            </aside>
+
+            {{-- الخبر المميّز (يظهر على اليسار في RTL) --}}
             @if($ppostFeatured)
             <article class="ppost-latest__featured">
                 <a href="{{ $ppostFeatured['url'] }}" class="ppost-latest__featured-link">
+                    <div class="ppost-latest__featured-body">
+                        <div class="ppost-latest__featured-meta">
+                            <span class="ppost-latest__featured-category">{{ $ppostFeatured['category'] }}</span>
+                            <span class="ppost-latest__featured-date">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                                {{ $ppostFeatured['date'] }}
+                            </span>
+                        </div>
+                        <h3 class="ppost-latest__featured-title">{{ $ppostFeatured['title'] }}</h3>
+                        <p class="ppost-latest__featured-excerpt">{{ $ppostFeatured['excerpt'] }}</p>
+                    </div>
                     <div class="ppost-latest__featured-image-wrap">
                         <img src="{{ $ppostFeatured['image'] }}"
                              alt="{{ $ppostFeatured['title'] }}"
                              class="ppost-latest__featured-image"
                              loading="lazy">
-                        <span class="ppost-latest__badge ppost-latest__badge--featured">{{ $ppostFeatured['category'] }}</span>
-                    </div>
-                    <div class="ppost-latest__featured-body">
-                        <h3 class="ppost-latest__featured-title">{{ $ppostFeatured['title'] }}</h3>
-                        <p class="ppost-latest__featured-excerpt">{{ $ppostFeatured['excerpt'] }}</p>
-                        <div class="ppost-latest__meta">
-                            <span class="ppost-latest__meta-author">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-                                {{ $ppostFeatured['author'] }}
-                            </span>
-                            <span class="ppost-latest__meta-date">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                                {{ $ppostFeatured['date'] }}
-                            </span>
-                        </div>
                     </div>
                 </a>
             </article>
             @endif
 
-            {{-- الأخبار الفرعية --}}
-            <div class="ppost-latest__sub-grid">
-                @foreach($ppostRest as $item)
-                    <article class="ppost-latest__card">
-                        <a href="{{ $item['url'] }}" class="ppost-latest__card-link">
-                            <div class="ppost-latest__card-image-wrap">
-                                <img src="{{ $item['image'] }}"
-                                     alt="{{ $item['title'] }}"
-                                     class="ppost-latest__card-image"
-                                     loading="lazy">
-                                <span class="ppost-latest__badge">{{ $item['category'] }}</span>
-                            </div>
-                            <div class="ppost-latest__card-body">
-                                <h4 class="ppost-latest__card-title">{{ $item['title'] }}</h4>
-                                <div class="ppost-latest__meta ppost-latest__meta--sm">
-                                    <span class="ppost-latest__meta-date">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                                        {{ $item['date'] }}
-                                    </span>
-                                </div>
-                            </div>
-                        </a>
-                    </article>
-                @endforeach
-            </div>
         </div>
     </div>
 </section>
@@ -243,8 +227,8 @@
 
 <style>
     .ppost-latest {
-        background-color: #f7f8fa;
-        padding: 48px 0;
+        background-color: #f5f6f8;
+        padding: 40px 0;
         direction: rtl;
         font-family: inherit;
     }
@@ -255,98 +239,133 @@
         padding: 0 20px;
     }
 
-    .ppost-latest__header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 32px;
-        padding-bottom: 16px;
-        border-bottom: 2px solid #e5e7eb;
-    }
-
-    .ppost-latest__title {
-        font-size: 1.75rem;
-        font-weight: 800;
-        color: #1a1a2e;
-        margin: 0;
-        display: flex;
-        align-items: center;
-        gap: 14px;
-    }
-
-    .ppost-latest__title-bar {
-        display: inline-block;
-        width: 6px;
-        height: 32px;
-        background: linear-gradient(180deg, #e94560, #c81d3f);
-        border-radius: 3px;
-    }
-
-    .ppost-latest__more {
-        color: #e94560;
-        font-size: 0.95rem;
-        font-weight: 600;
-        text-decoration: none;
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        padding: 8px 16px;
-        border: 1.5px solid #e94560;
-        border-radius: 999px;
-        transition: all 0.25s ease;
-    }
-
-    .ppost-latest__more:hover {
-        background-color: #e94560;
-        color: #ffffff;
-        gap: 10px;
-    }
-
     .ppost-latest__grid {
         display: grid;
-        grid-template-columns: 1fr;
-        gap: 28px;
-        align-items: start;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+        gap: 24px;
+        align-items: stretch;
     }
 
-    /* الخبر المميّز */
+    /* =====================================================
+       الشريط الجانبي (right column in RTL)
+       ===================================================== */
+    .ppost-latest__sidebar {
+        background-color: #ffffff;
+        border: 1px solid #e5e7eb;
+        border-radius: 8px;
+        padding: 22px 24px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .ppost-latest__sidebar-heading {
+        font-size: 1.15rem;
+        font-weight: 800;
+        color: #1a1f36;
+        margin: 0 0 18px;
+        padding-bottom: 12px;
+        border-bottom: 2px solid #0ea5b7;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        align-self: flex-start;
+    }
+
+    .ppost-latest__sidebar-dot {
+        display: inline-block;
+        width: 9px;
+        height: 9px;
+        background-color: #0ea5b7;
+        border-radius: 50%;
+        flex-shrink: 0;
+    }
+
+    .ppost-latest__sidebar-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        flex: 1;
+    }
+
+    .ppost-latest__sidebar-item {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 14px;
+        align-items: flex-start;
+        padding: 14px 0;
+        border-bottom: 1px dashed #e5e7eb;
+    }
+
+    .ppost-latest__sidebar-item:first-child {
+        padding-top: 2px;
+    }
+
+    .ppost-latest__sidebar-item:last-child {
+        border-bottom: none;
+        padding-bottom: 2px;
+    }
+
+    .ppost-latest__sidebar-num {
+        font-size: 1.4rem;
+        font-weight: 800;
+        color: #0ea5b7;
+        line-height: 1;
+        min-width: 32px;
+        font-variant-numeric: tabular-nums;
+    }
+
+    .ppost-latest__sidebar-content {
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+        min-width: 0;
+    }
+
+    .ppost-latest__sidebar-link {
+        font-size: 0.95rem;
+        font-weight: 700;
+        color: #1a1f36;
+        line-height: 1.55;
+        text-decoration: none;
+        transition: color 0.2s ease;
+        display: block;
+    }
+
+    .ppost-latest__sidebar-link:hover,
+    .ppost-latest__sidebar-link:focus {
+        color: #0ea5b7;
+    }
+
+    .ppost-latest__sidebar-date {
+        font-size: 0.75rem;
+        color: #6b7280;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    /* =====================================================
+       الخبر المميّز (left column in RTL)
+       ===================================================== */
     .ppost-latest__featured {
         background-color: #ffffff;
-        border-radius: 16px;
+        border: 1px solid #e5e7eb;
+        border-radius: 8px;
         overflow: hidden;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        transition: box-shadow 0.3s ease, transform 0.3s ease;
     }
 
     .ppost-latest__featured:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        transform: translateY(-2px);
     }
 
     .ppost-latest__featured-link {
         display: grid;
-        grid-template-columns: 1.25fr 1fr;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
         color: inherit;
         text-decoration: none;
-    }
-
-    .ppost-latest__featured-image-wrap {
-        position: relative;
-        width: 100%;
-        aspect-ratio: 16 / 10;
-        overflow: hidden;
-        background-color: #e5e7eb;
-    }
-
-    .ppost-latest__featured-image {
-        width: 100%;
         height: 100%;
-        object-fit: cover;
-        transition: transform 0.5s ease;
-    }
-
-    .ppost-latest__featured:hover .ppost-latest__featured-image {
-        transform: scale(1.05);
     }
 
     .ppost-latest__featured-body {
@@ -354,177 +373,133 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+        gap: 14px;
     }
 
-    .ppost-latest__featured-title {
-        font-size: 1.65rem;
-        font-weight: 800;
-        color: #1a1a2e;
-        margin: 0 0 14px;
-        line-height: 1.4;
-        transition: color 0.25s ease;
-    }
-
-    .ppost-latest__featured:hover .ppost-latest__featured-title {
-        color: #e94560;
-    }
-
-    .ppost-latest__featured-excerpt {
-        font-size: 1rem;
-        color: #4b5563;
-        line-height: 1.75;
-        margin: 0 0 18px;
-        display: -webkit-box;
-        -webkit-line-clamp: 3;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-    }
-
-    /* شارة التصنيف */
-    .ppost-latest__badge {
-        position: absolute;
-        top: 14px;
-        right: 14px;
-        background-color: rgba(233, 69, 96, 0.95);
-        color: #ffffff;
-        font-size: 0.75rem;
-        font-weight: 700;
-        padding: 6px 12px;
-        border-radius: 4px;
-        letter-spacing: 0.3px;
-        backdrop-filter: blur(6px);
-    }
-
-    .ppost-latest__badge--featured {
-        font-size: 0.8rem;
-        padding: 7px 14px;
-    }
-
-    /* meta */
-    .ppost-latest__meta {
+    .ppost-latest__featured-meta {
         display: flex;
-        gap: 18px;
-        font-size: 0.85rem;
-        color: #6b7280;
         align-items: center;
+        gap: 16px;
+        flex-wrap: wrap;
     }
 
-    .ppost-latest__meta--sm {
+    .ppost-latest__featured-category {
+        color: #0ea5b7;
+        font-size: 0.85rem;
+        font-weight: 700;
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+    }
+
+    .ppost-latest__featured-category::before {
+        content: "";
+        width: 8px;
+        height: 8px;
+        background-color: #0ea5b7;
+        border-radius: 50%;
+        display: inline-block;
+    }
+
+    .ppost-latest__featured-date {
         font-size: 0.75rem;
-        gap: 12px;
-    }
-
-    .ppost-latest__meta-author,
-    .ppost-latest__meta-date {
+        color: #6b7280;
         display: inline-flex;
         align-items: center;
         gap: 5px;
     }
 
-    /* شبكة الأخبار الفرعية */
-    .ppost-latest__sub-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 22px;
-    }
-
-    .ppost-latest__card {
-        background-color: #ffffff;
-        border-radius: 12px;
-        overflow: hidden;
-        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
-        transition: transform 0.25s ease, box-shadow 0.25s ease;
-    }
-
-    .ppost-latest__card:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-    }
-
-    .ppost-latest__card-link {
-        display: block;
-        color: inherit;
-        text-decoration: none;
-    }
-
-    .ppost-latest__card-image-wrap {
-        position: relative;
-        width: 100%;
-        aspect-ratio: 16 / 10;
-        overflow: hidden;
-        background-color: #e5e7eb;
-    }
-
-    .ppost-latest__card-image {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.4s ease;
-    }
-
-    .ppost-latest__card:hover .ppost-latest__card-image {
-        transform: scale(1.06);
-    }
-
-    .ppost-latest__card-body {
-        padding: 14px 16px 16px;
-    }
-
-    .ppost-latest__card-title {
-        font-size: 0.95rem;
-        font-weight: 700;
-        color: #1a1a2e;
-        margin: 0 0 10px;
-        line-height: 1.5;
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
+    .ppost-latest__featured-title {
+        font-size: 1.35rem;
+        font-weight: 800;
+        color: #e94560;
+        margin: 0;
+        line-height: 1.55;
         transition: color 0.25s ease;
     }
 
-    .ppost-latest__card:hover .ppost-latest__card-title {
-        color: #e94560;
+    .ppost-latest__featured:hover .ppost-latest__featured-title {
+        color: #c81d3f;
     }
 
-    /* التجاوب */
+    .ppost-latest__featured-excerpt {
+        font-size: 0.9rem;
+        color: #4b5563;
+        line-height: 1.85;
+        margin: 0;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .ppost-latest__featured-image-wrap {
+        position: relative;
+        width: 100%;
+        min-height: 320px;
+        background-color: #e5e7eb;
+        overflow: hidden;
+    }
+
+    .ppost-latest__featured-image {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+
+    .ppost-latest__featured:hover .ppost-latest__featured-image {
+        transform: scale(1.04);
+    }
+
+    /* =====================================================
+       التجاوب
+       ===================================================== */
     @media (max-width: 992px) {
-        .ppost-latest__sub-grid {
-            grid-template-columns: repeat(2, 1fr);
+        .ppost-latest__grid {
+            grid-template-columns: 1fr;
         }
         .ppost-latest__featured-link {
             grid-template-columns: 1fr;
         }
-        .ppost-latest__featured-title {
-            font-size: 1.35rem;
+        .ppost-latest__featured-image-wrap {
+            min-height: 0;
+            aspect-ratio: 16 / 9;
+        }
+        .ppost-latest__featured-body {
+            padding: 24px 24px 26px;
         }
     }
 
     @media (max-width: 640px) {
         .ppost-latest {
-            padding: 32px 0;
+            padding: 28px 0;
         }
-        .ppost-latest__header {
-            flex-wrap: wrap;
-            gap: 12px;
-        }
-        .ppost-latest__title {
-            font-size: 1.4rem;
-        }
-        .ppost-latest__title-bar {
-            height: 26px;
-        }
-        .ppost-latest__sub-grid {
-            grid-template-columns: 1fr;
+        .ppost-latest__sidebar {
+            padding: 18px 18px;
         }
         .ppost-latest__featured-body {
-            padding: 18px 20px 22px;
+            padding: 20px 20px 22px;
+            gap: 12px;
         }
         .ppost-latest__featured-title {
-            font-size: 1.15rem;
+            font-size: 1.1rem;
         }
         .ppost-latest__featured-excerpt {
+            font-size: 0.85rem;
+            -webkit-line-clamp: 3;
+        }
+        .ppost-latest__sidebar-num {
+            font-size: 1.2rem;
+            min-width: 28px;
+        }
+        .ppost-latest__sidebar-link {
             font-size: 0.9rem;
+        }
+        .ppost-latest__sidebar-heading {
+            font-size: 1.05rem;
         }
     }
 </style>
