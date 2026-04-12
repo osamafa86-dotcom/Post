@@ -33,7 +33,11 @@
                         fn ($q) => $q->where('is_active', true)
                     )
                     ->when(
-                        \Illuminate\Support\Facades\Schema::hasColumn('breaking_news', 'published_at'),
+                        \Illuminate\Support\Facades\Schema::hasColumn('breaking_news', 'publish_date'),
+                        fn ($q) => $q->whereNotNull('publish_date')->where('publish_date', '<=', now())
+                    )
+                    ->when(
+                        ! \Illuminate\Support\Facades\Schema::hasColumn('breaking_news', 'publish_date') && \Illuminate\Support\Facades\Schema::hasColumn('breaking_news', 'published_at'),
                         fn ($q) => $q->whereNotNull('published_at')->where('published_at', '<=', now())
                     )
                     ->latest()

@@ -82,6 +82,7 @@ class PpostNewsSeeder extends Seeder
             $this->set($data, $cols, 'writer',         $item['author']);
 
             // Status / publish flags
+            $this->set($data, $cols, 'publish_status', 1);
             $this->set($data, $cols, 'status',         'published');
             $this->set($data, $cols, 'state',          'published');
             $this->set($data, $cols, 'is_published',   1);
@@ -95,8 +96,8 @@ class PpostNewsSeeder extends Seeder
             $this->set($data, $cols, 'locale',         'ar');
 
             // Timestamps
-            $this->set($data, $cols, 'published_at',   $publishedAt);
             $this->set($data, $cols, 'publish_date',   $publishedAt);
+            $this->set($data, $cols, 'published_at',   $publishedAt);
             $this->set($data, $cols, 'created_at',     $publishedAt);
             $this->set($data, $cols, 'updated_at',     $publishedAt);
 

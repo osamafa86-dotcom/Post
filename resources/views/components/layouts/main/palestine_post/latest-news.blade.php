@@ -25,17 +25,24 @@
             try {
                 $query = \App\Models\Post::query();
 
-                if (\Illuminate\Support\Facades\Schema::hasColumn('posts', 'status')) {
+                // publish_status (الحقل الفعلي في قاعدة البيانات)
+                if (\Illuminate\Support\Facades\Schema::hasColumn('posts', 'publish_status')) {
+                    $query->where('publish_status', 1);
+                } elseif (\Illuminate\Support\Facades\Schema::hasColumn('posts', 'status')) {
                     $query->where('status', 'published');
                 }
-                if (\Illuminate\Support\Facades\Schema::hasColumn('posts', 'published_at')) {
-                    $query->whereNotNull('published_at')
-                          ->where('published_at', '<=', now());
+
+                // publish_date (الحقل الفعلي في قاعدة البيانات)
+                $dateCol = 'created_at';
+                if (\Illuminate\Support\Facades\Schema::hasColumn('posts', 'publish_date')) {
+                    $query->whereNotNull('publish_date')->where('publish_date', '<=', now());
+                    $dateCol = 'publish_date';
+                } elseif (\Illuminate\Support\Facades\Schema::hasColumn('posts', 'published_at')) {
+                    $query->whereNotNull('published_at')->where('published_at', '<=', now());
+                    $dateCol = 'published_at';
                 }
 
-                $latestNews = $query->latest(
-                    \Illuminate\Support\Facades\Schema::hasColumn('posts', 'published_at') ? 'published_at' : 'created_at'
-                )->take(10)->get();
+                $latestNews = $query->latest($dateCol)->take(10)->get();
             } catch (\Throwable $e) {
                 $latestNews = null;
             }
@@ -142,10 +149,10 @@
         if (is_array($item)) {
             return [
                 'title'    => $item['title']    ?? '',
-                'excerpt'  => $item['excerpt']  ?? ($item['summary'] ?? ''),
+                'excerpt'  => $item['excerpt']  ?? ($item['description'] ?? ($item['summary'] ?? '')),
                 'image'    => $item['image']    ?? ($item['featured_image'] ?? asset('images/placeholder.jpg')),
-                'category' => $item['category'] ?? 'أخبار',
-                'date'     => $item['date']     ?? ($item['published_at'] ?? 'حديثاً'),
+                'category' => $item['category'] ?? ($item['news_type'] ?? 'أخبار'),
+                'date'     => $item['date']     ?? ($item['publish_date'] ?? ($item['published_at'] ?? 'حديثاً')),
                 'author'   => $item['author']   ?? 'هيئة التحرير',
                 'url'      => $item['url']      ?? '#',
             ];
@@ -153,10 +160,10 @@
         if (is_object($item)) {
             return [
                 'title'    => $item->title ?? '',
-                'excerpt'  => \Illuminate\Support\Str::limit(strip_tags($item->excerpt ?? $item->content ?? ''), 140),
-                'image'    => $item->featured_image ?? ($item->image ?? asset('images/placeholder.jpg')),
-                'category' => is_object($item->category ?? null) ? ($item->category->name ?? 'أخبار') : ($item->category ?? 'أخبار'),
-                'date'     => isset($item->published_at) ? \Carbon\Carbon::parse($item->published_at)->diffForHumans() : 'حديثاً',
+                'excerpt'  => \Illuminate\Support\Str::limit(strip_tags($item->description ?? $item->excerpt ?? $item->body ?? $item->content ?? ''), 140),
+                'image'    => $item->image ?? ($item->featured_image ?? asset('images/placeholder.jpg')),
+                'category' => is_object($item->category ?? null) ? ($item->category->name ?? 'أخبار') : ($item->category ?? ($item->news_type ?? 'أخبار')),
+                'date'     => isset($item->publish_date) ? \Carbon\Carbon::parse($item->publish_date)->diffForHumans() : (isset($item->published_at) ? \Carbon\Carbon::parse($item->published_at)->diffForHumans() : 'حديثاً'),
                 'author'   => is_object($item->user ?? null) ? ($item->user->name ?? 'هيئة التحرير') : 'هيئة التحرير',
                 'url'      => method_exists($item, 'getUrlAttribute') ? $item->url : (isset($item->slug) ? url('/post/' . $item->slug) : '#'),
             ];
