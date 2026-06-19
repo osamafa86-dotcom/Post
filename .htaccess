@@ -11,3 +11,5 @@ RewriteRule ^(.*)$ public/$1 [L]
 # Direct all requests to /public folder
 
 </IfModule>
+php_value memory_limit 512M
+php_value max_execution_time 120
