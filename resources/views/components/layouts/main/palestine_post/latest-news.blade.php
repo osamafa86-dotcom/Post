@@ -45,6 +45,7 @@
                 $latestNews = $query->latest($dateCol)->take(10)->get();
             } catch (\Throwable $e) {
                 $latestNews = null;
+                $__ppostDebugError = $e->getMessage() . ' in ' . $e->getFile() . ':' . $e->getLine();
             }
         }
 
@@ -173,7 +174,11 @@
 
     $ppostFeatured = $ppostLatestItems->first();
     $ppostRest     = $ppostLatestItems->slice(1)->take(9);
+
+    $__ppostSource = isset($__ppostDebugError) ? 'error' : (($latestNews instanceof \Illuminate\Database\Eloquent\Collection) ? 'database' : 'fallback');
 @endphp
+
+<!-- PPOST-DEBUG: source={{ $__ppostSource }} count={{ $ppostLatestItems->count() }} {{ isset($__ppostDebugError) ? 'error='.$__ppostDebugError : '' }} -->
 
 @if($ppostLatestItems->isNotEmpty())
 <section class="ppost-latest" dir="rtl" aria-labelledby="ppost-latest-title">
