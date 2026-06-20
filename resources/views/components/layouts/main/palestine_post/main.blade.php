@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl" class="js-loading">
 <head>
-    <meta name="google-site-verification" content="sV0WL8s0sw0y7tYqYV7_aiMeeh33iOsCvKprhRatUXI" />
+    <meta name="google-site-verification" content="ET8mGr8Hnm5nfgYJnqR75RPIZ-4OW9jMyuCmbB0i1Gg" />
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
