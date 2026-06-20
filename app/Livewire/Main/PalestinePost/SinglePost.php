@@ -11,6 +11,7 @@ use Livewire\Attributes\Computed;
 use Livewire\Attributes\Layout;
 use Livewire\Attributes\Url;
 use Livewire\Component;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Session;
 
 class SinglePost extends Component
@@ -50,14 +51,15 @@ class SinglePost extends Component
             })
             ->firstOrFail();
 
-        $this->sameCategoryPost = Post::whereNot('id', $this->id)
-            ->with(['category.relationable'])
-            ->whereHas('category', function ($query) {
-                $query->where('relationable_id', $this->post->category?->id);
-            })
+        // Related posts depend only on the category, not on the current article, so cache
+        // per-category (bounded 5-min staleness) and exclude the current post in PHP.
+        $categoryId = $this->post->category?->id;
+        $related = Cache::remember('post:related:cat:' . ($categoryId ?? 'none'), 300, fn () => Post::with(['category.relationable'])
+            ->whereHas('category', fn ($query) => $query->where('relationable_id', $categoryId))
             ->orderByDesc('publish_date')
-            ->take(5)
-            ->get();
+            ->take(6)
+            ->get());
+        $this->sameCategoryPost = $related->where('id', '!=', $this->id)->take(5)->values();
 
         if (!Session::has('viewed_post_' . $this->post->id)) {
             $now = Carbon::now();

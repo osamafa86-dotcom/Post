@@ -12,6 +12,7 @@ use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Foundation\Application;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Http;
 use Livewire\Attributes\Computed;
 use Livewire\Attributes\Layout;
@@ -41,7 +42,7 @@ class AllPosts extends Component
         $segment = request()->segment(1);
         $title = request()->segment(2);
 
-        return   Post::when(!empty($this->search_query['search_text']), function ($query) {
+        $query = Post::when(!empty($this->search_query['search_text']), function ($query) {
             $query->where('title', 'like', '%' . $this->search_query['search_text'] . '%');
         })
             ->when(!empty($this->search_query['date']) && !empty($this->search_query['to_date']), function ($query) {
@@ -88,9 +89,18 @@ class AllPosts extends Component
                         $subQuery->where('category_type', CategoryTypeEnum::NEWS->value);
                     }
                 );
-            })->with(['category.relationable', 'tag.relationable', 'author.relationable', 'files.file'])->latest()->paginate(6);
+            });
 
+        // The pagination COUNT runs nested EXISTS over ~22k rows (the 4s+ bottleneck).
+        // Cache it (5-min staleness) and pass it to paginate() as $total so Laravel
+        // skips the count query entirely — Livewire pagination stays intact.
+        $cacheKey = 'allposts:count:' . md5(json_encode([$segment, $title, $this->search_query]));
+        $total = Cache::remember($cacheKey, 300, fn () => (clone $query)->count());
 
+        return $query
+            ->with(['category.relationable', 'tag.relationable', 'author.relationable', 'files.file'])
+            ->latest()
+            ->paginate(6, ['*'], 'page', null, $total);
     }
     #[Computed]
     public function categories(): Collection|array
