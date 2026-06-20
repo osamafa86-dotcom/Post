@@ -18,6 +18,11 @@
             $metaDescription = e(Illuminate\Support\Str::limit(strip_tags($__env->yieldContent('description')), 200)) ?: config('system.footer_description');
             $metaImage = config('system.favicon') ? file_url(config('system.favicon')) : asset('assets/main/palestine_post/imgs/favicon.png');
             $metaUrl = url()->current();
+            $ogLocale = match (app()->getLocale()) {
+                'en' => 'en_US',
+                'tr' => 'tr_TR',
+                default => 'ar_AR',
+            };
         @endphp
 
             <!-- Open Graph / Facebook, Messenger, LinkedIn, Telegram -->
@@ -26,7 +31,7 @@
         <meta property="og:url" content="{{ $metaUrl }}"/>
         <meta property="og:title" content="{{ $metaTitle }}"/>
         <meta property="og:description" content="{{ $metaDescription }}"/>
-        <meta property="og:locale" content="ar_AR"/>
+        <meta property="og:locale" content="{{ $ogLocale }}"/>
         <meta property="og:image" content="{{ $metaImage }}"/>
         <meta property="og:image:width" content="1200"/>
         <meta property="og:image:height" content="630"/>

@@ -54,6 +54,70 @@
     </script>
     @endpush
 
+    {{-- Article Open Graph / Twitter + hreflang.
+         صفحة المقال يُتخطّى لها بلوك OG الرئيسي في main.blade.php، لذا نوفّرها هنا. --}}
+    @push('meta')
+        @php
+            $postLang = $post?->lang ?: 'ar';
+            $ogLocaleArticle = match ($postLang) {
+                'en' => 'en_US',
+                'tr' => 'tr_TR',
+                default => 'ar_AR',
+            };
+            $ogImage = $post?->files?->first()?->file?->path
+                ? file_url($post->files->first()->file->path)
+                : null;
+            $ogDescription = \Illuminate\Support\Str::limit(strip_tags($post?->description), 200);
+
+            // مجموعة hreflang من الترجمات (+ النسخة الحالية)
+            $hreflangCluster = [];
+            if ($post?->translation_group) {
+                foreach ($post->translations as $translation) {
+                    if ($translation->slug && $translation->lang) {
+                        $hreflangCluster[$translation->lang] = route('main.' . config('app.launch') . '.show_post', [
+                            'id' => $translation->id, 'slug' => $translation->slug,
+                        ]);
+                    }
+                }
+            }
+            $hreflangCluster[$postLang] = url()->current();
+        @endphp
+
+        <meta property="og:type" content="article"/>
+        <meta property="og:site_name" content="{{ config('system.site_name') }}"/>
+        <meta property="og:locale" content="{{ $ogLocaleArticle }}"/>
+        <meta property="og:url" content="{{ url()->current() }}"/>
+        <meta property="og:title" content="{{ $post?->title }}"/>
+        <meta property="og:description" content="{{ $ogDescription }}"/>
+        @if($ogImage)
+            <meta property="og:image" content="{{ $ogImage }}"/>
+            <meta property="og:image:alt" content="{{ $post?->title }}"/>
+        @endif
+        @if($post?->publish_date)
+            <meta property="article:published_time" content="{{ \Illuminate\Support\Carbon::parse($post->publish_date)->toIso8601String() }}"/>
+        @endif
+        @if($post?->updated_at)
+            <meta property="article:modified_time" content="{{ $post->updated_at->toIso8601String() }}"/>
+        @endif
+        @if($post?->author?->relationable?->name)
+            <meta property="article:author" content="{{ $post->author->relationable->name }}"/>
+        @endif
+
+        <meta name="twitter:card" content="summary_large_image"/>
+        <meta name="twitter:title" content="{{ $post?->title }}"/>
+        <meta name="twitter:description" content="{{ $ogDescription }}"/>
+        @if($ogImage)
+            <meta name="twitter:image" content="{{ $ogImage }}"/>
+        @endif
+
+        @if(count($hreflangCluster) > 1)
+            @foreach($hreflangCluster as $lang => $href)
+                <link rel="alternate" hreflang="{{ $lang }}" href="{{ $href }}"/>
+            @endforeach
+            <link rel="alternate" hreflang="x-default" href="{{ $hreflangCluster[$postLang] }}"/>
+        @endif
+    @endpush
+
     @section('style')
     {{-- Facebook SDK for embedded posts --}}
     <script async defer crossorigin="anonymous"

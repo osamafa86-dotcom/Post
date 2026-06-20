@@ -1,5 +1,8 @@
 User-agent: *
 Allow: /
+# Article pages use query-string canonical URLs (/post?id=&slug=) — keep them crawlable.
+# "Allow: /post" is more specific than "Disallow: /*?*", so it wins for /post URLs.
+Allow: /post
 Disallow: /dashboard
 Disallow: /dashboard/*
 Disallow: /admin

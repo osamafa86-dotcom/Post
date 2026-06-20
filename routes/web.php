@@ -4,6 +4,7 @@ use App\Http\Controllers\Dashboard\Languages\LanguageController;
 use App\Http\Controllers\FileManger\FileMangerController;
 use App\Http\Controllers\ImageEditorController;
 use App\Http\Controllers\RSSFeedController;
+use App\Http\Controllers\SitemapController;
 use App\Livewire\Dashboard\Advertisements\CreateUpdateAdvertisement;
 use App\Livewire\Dashboard\Advertisements\ListAdvertisements;
 use App\Livewire\Dashboard\ListAlerts;
@@ -230,6 +231,14 @@ if (config('app.launch') === 'palestine_post') {
         Route::get('/single_podcast/{podcast_album_id}/{album_name}', \App\Livewire\Main\PalestinePost\SinglePodcast::class)->name('main.palestine_post.podcast');
         Route::get('/single_video/{category_id?}/{category_title?}', \App\Livewire\Main\PalestinePost\SingleVideo::class)->name('main.palestine_post.single_video');
         Route::get('/rss/category/all', [RSSFeedController::class, 'index'])->name('main.rss_feed');
+
+        // XML Sitemaps (clean paths so robots.txt "Disallow: /*?*" does not block them)
+        Route::get('/sitemap.xml', [SitemapController::class, 'index'])->name('sitemap.index');
+        Route::get('/sitemap-pages.xml', [SitemapController::class, 'pages'])->name('sitemap.pages');
+        Route::get('/sitemap-posts-{page}.xml', [SitemapController::class, 'posts'])->whereNumber('page')->name('sitemap.posts');
+        Route::get('/sitemap-categories.xml', [SitemapController::class, 'categories'])->name('sitemap.categories');
+        Route::get('/sitemap-tags.xml', [SitemapController::class, 'tags'])->name('sitemap.tags');
+        Route::get('/sitemap-news.xml', [SitemapController::class, 'news'])->name('sitemap.news');
 
     });
 }
