@@ -1,0 +1,122 @@
+{
+ "runId": "yedibasak-app-design-001",
+ "fileKey": "9QjfqCpz5QB1ulRk73yTVg",
+ "fileUrl": "https://www.figma.com/design/9QjfqCpz5QB1ulRk73yTVg",
+ "scope": "full-library + screens",
+ "pages": {
+  "Cover": "0:1",
+  "Foundations": "4:2",
+  "Components": "4:3",
+  "Screens": "4:4",
+  "Flows": "4:5"
+ },
+ "collections": {
+  "primitives": "VariableCollectionId:4:6",
+  "color": "VariableCollectionId:4:40",
+  "spacing": "VariableCollectionId:4:70",
+  "radius": "VariableCollectionId:4:80",
+  "size": "VariableCollectionId:4:87"
+ },
+ "modes": {
+  "light": "4:1",
+  "dark": "4:2"
+ },
+ "completedSteps": [
+  "foundations/variables",
+  "foundations/text-styles",
+  "foundations/effects",
+  "pages",
+  "components/batch1",
+  "components/batch2A",
+  "components/batch2B",
+  "screens/01-11",
+  "cover",
+  "foundations-specimen",
+  "flows-notes",
+  "exports/png",
+  "docs/design-readme"
+ ],
+ "components": {
+  "icons": {
+   "home": "5:3",
+   "heart": "5:7",
+   "user": "5:11",
+   "sparkles": "5:16",
+   "bell": "5:21",
+   "globe": "5:26",
+   "search": "5:32",
+   "check": "5:37",
+   "chevron-left": "5:41",
+   "chevron-right": "5:45",
+   "arrow-right": "5:49",
+   "calendar": "5:54",
+   "repeat": "5:59",
+   "lock": "5:66",
+   "share": "5:71",
+   "plus": "5:77",
+   "minus": "5:81",
+   "droplet": "5:85",
+   "shield": "5:89",
+   "grid": "5:94",
+   "x": "5:101",
+   "pause": "5:105",
+   "credit-card": "5:110",
+   "bank": "5:115",
+   "gift": "5:121",
+   "phone": "5:128",
+   "wheat": "5:133",
+   "moon": "5:143",
+   "graduation": "5:147",
+   "first-aid": "5:152",
+   "apple": "5:157"
+  },
+  "sets": {
+   "Button": "5:269",
+   "PayButton": "5:281",
+   "AmountChip": "5:287",
+   "Badge": "5:316",
+   "Input": "10:63",
+   "SegmentedControl": "10:86",
+   "CategoryChip": "10:102",
+   "Toggle": "10:108",
+   "BottomNav": "12:239",
+   "AppBar": "12:282"
+  },
+  "comps": {
+   "ProgressBar": "5:318",
+   "TrustRow": "5:321",
+   "StatusBar": "5:329",
+   "HomeIndicator": "5:334",
+   "Stepper": "10:110",
+   "CampaignCard": "12:53",
+   "SubscriptionRow": "12:284",
+   "ImpactStat": "12:302"
+  }
+ },
+ "screens": {
+  "01-welcome": "14:2",
+  "02-home": "14:107",
+  "03-campaign-detail": "16:324",
+  "04-donate-sheet": "16:474",
+  "05-recurring-setup": "17:456",
+  "06-success": "17:553",
+  "07a-phone-signin": "18:529",
+  "07b-otp": "18:627",
+  "08-my-impact": "18:698",
+  "09-manage-subscription": "19:773",
+  "10-orphan-sponsorship": "19:933",
+  "11-home-dark": "19:1046"
+ },
+ "componentsPageNextY": 5874,
+ "cover": "20:2",
+ "foundations": {
+  "colors": "21:11",
+  "typography": "21:234",
+  "spacing": "21:281"
+ },
+ "flows": [
+  "22:11",
+  "22:107",
+  "22:204"
+ ]
+}
