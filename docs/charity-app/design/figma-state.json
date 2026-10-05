@@ -28,7 +28,13 @@
   "pages",
   "components/batch1",
   "components/batch2A",
-  "components/batch2B"
+  "components/batch2B",
+  "assets/photos",
+  "logo",
+  "components/v2",
+  "screens/v2 (36)",
+  "admin/3-screens",
+  "exports/v2+admin"
  ],
  "components": {
   "icons": {
@@ -129,5 +135,60 @@
    "CategoryTile": "27:836",
    "StoryCard": "27:846"
   }
+ },
+ "screensV2": {
+  "V2-01 Onboarding": "28:11",
+  "V2-02 Home": "28:683",
+  "V2-02 Home full scroll": "28:205",
+  "V2-03 Categories": "29:836",
+  "V2-04 Category List": "29:1128",
+  "V2-05 Campaign Detail": "30:1208",
+  "V2-06 Quick Donate": "30:1550",
+  "V2-07 Cart": "31:1426",
+  "V2-08 Checkout": "31:1736",
+  "V2-09 Success": "32:1697",
+  "V2-10 Recurring": "32:1858",
+  "V2-11 Ramadan": "32:1990",
+  "V2-12 Qurbani shares": "34:1891",
+  "V2-13 Qurbani proxy": "34:2029",
+  "V2-14 Qurbani tracking": "34:2161",
+  "V2-15 Zakat": "35:2070",
+  "V2-16 Gift": "35:2228",
+  "V2-17 Orphan sponsorship": "35:2418",
+  "V2-18 Orphan profile": "35:2580",
+  "V2-19 My Impact": "36:2419",
+  "V2-20 Profile": "36:2782",
+  "V2-21 Settings": "36:3318",
+  "V2-22 Notifications": "36:3633",
+  "V2-23 Manage Subscription": "37:3283",
+  "V2-24 Goodness Network": "37:3536",
+  "V2-25 Bank Transfer": "37:3766",
+  "V2-26 Stories": "40:3567",
+  "V2-27 Card Entry": "40:3804",
+  "V2-28 3D Secure": "40:3910",
+  "V2-29 Receipts": "44:3789",
+  "V2-30 Sign In": "44:4025",
+  "V2-31 OTP": "44:4139",
+  "V2-32 Empty Cart": "45:3986",
+  "V2-33 Offline": "45:4109",
+  "V2-34 Payment Failed": "45:4224",
+  "V2-35 Loading Skeleton": "45:4325",
+  "V2-36 Home Dark": "45:4421"
+ },
+ "v2Layout": {
+  "xStep": 480,
+  "nextFreeX": 17760
+ },
+ "adminScreens": {
+  "A-01 Dashboard": "46:4533",
+  "A-02 Campaign Editor Media": "48:4740",
+  "A-03 Branding & Content": "49:660",
+  "xStep": 1540,
+  "nextFreeX": 4620
+ },
+ "exports": {
+  "screensV2": "docs/charity-app/design/screens-v2/",
+  "admin": "docs/charity-app/design/admin/",
+  "doc": "docs/charity-app/design/V2-SCREENS.md"
  }
 }
