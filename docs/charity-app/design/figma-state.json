@@ -28,13 +28,7 @@
   "pages",
   "components/batch1",
   "components/batch2A",
-  "components/batch2B",
-  "screens/01-11",
-  "cover",
-  "foundations-specimen",
-  "flows-notes",
-  "exports/png",
-  "docs/design-readme"
+  "components/batch2B"
  ],
  "components": {
   "icons": {
@@ -93,30 +87,47 @@
    "ImpactStat": "12:302"
   }
  },
- "screens": {
-  "01-welcome": "14:2",
-  "02-home": "14:107",
-  "03-campaign-detail": "16:324",
-  "04-donate-sheet": "16:474",
-  "05-recurring-setup": "17:456",
-  "06-success": "17:553",
-  "07a-phone-signin": "18:529",
-  "07b-otp": "18:627",
-  "08-my-impact": "18:698",
-  "09-manage-subscription": "19:773",
-  "10-orphan-sponsorship": "19:933",
-  "11-home-dark": "19:1046"
+ "screens": {},
+ "componentsPageNextY": 10754,
+ "pagesV2": {
+  "assets": "24:198",
+  "v2Screens": "24:199",
+  "admin": "24:200"
  },
- "componentsPageNextY": 5874,
- "cover": "20:2",
- "foundations": {
-  "colors": "21:11",
-  "typography": "21:234",
-  "spacing": "21:281"
+ "logo": {
+  "appIcon": "24:212",
+  "mark": "24:291",
+  "lockup": "24:370"
  },
- "flows": [
-  "22:11",
-  "22:107",
-  "22:204"
- ]
+ "images": {
+  "wheat": "50cfdb9dda25db5d8732ac6e4b7dce90c246cf13",
+  "meals": "914f44adb81503fcc4aa76041b8cd9ef623dfd08",
+  "water": "35c7116fc7ec9dd85dc0ea29e57ae3d1463e16e4",
+  "orphan": "204ded58bf628e060b2288edda1042d508872b3b",
+  "qurbani": "1e9db9abddf384e99946abd129ae33ac6cbda9f5",
+  "winter": "e5c4fcfb84499cf661ce6ec8e0412a5249ad1d00",
+  "ramadan": "82d74832892b9b1289aab42a72d183fab65a0020",
+  "volunteers": "a559b7c770844e7804b8aff6bcc45b3dbb075703",
+  "parcel": "eee1c49f3ce2dfe08851fec4e0d3db219dbc11d6",
+  "sapling": "562978a3f90c3a127fb06f75e1714805903529a8",
+  "clinic": "2b795a9a6195e3b406c1398e1a1b6d1e86576393"
+ },
+ "componentsV2": {
+  "sets": {
+   "BottomNavV2": "27:687",
+   "FilterChip": "27:721",
+   "ListRow": "27:760",
+   "PhotoCard": "27:834",
+   "PaymentMethodRow": "27:887",
+   "Checkbox": "27:895",
+   "TimelineStep": "27:923"
+  },
+  "comps": {
+   "Avatar": "27:689",
+   "SectionHeader": "27:692",
+   "SearchBar": "27:701",
+   "CategoryTile": "27:836",
+   "StoryCard": "27:846"
+  }
+ }
 }
